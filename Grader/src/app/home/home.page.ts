@@ -18,9 +18,9 @@ export class HomePage {
 
   async test() {
 
-  this.afstore.doc<any>('userProfile/we45tfgy8ij').set({
-    name: 'Jorge Vergara',
-    email: 'j@javebratt.com',
+  this.afstore.doc<any>('userProfile/birdandrampai').set({
+    name: 'Jky',
+    email: 'sdcom',
  
   })
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AngularFirestore } from '@angular/fire/firestore';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,9 +12,11 @@ export class LoginPage implements OnInit {
   username: string = ""
   gpax: number = 0.0
   credit: number = 0.0
+  year
 
-
-  constructor(public afstore: AngularFirestore) { }
+  constructor(
+    public afstore: AngularFirestore
+    ) { }
 
 
   async test() {
@@ -23,6 +24,8 @@ export class LoginPage implements OnInit {
     this.afstore.doc<any>('userProfile/'+this.username).set({
       gpax: this.gpax,
       credit: this.credit,
+      year: this.year,
+
    
     })
   
