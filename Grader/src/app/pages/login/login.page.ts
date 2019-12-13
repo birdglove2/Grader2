@@ -20,9 +20,9 @@ export class LoginPage implements OnInit {
 
   async test() {
 
-    this.afstore.doc<any>('userProfile/we45tfgy8ij').set({
-      name: 'Jorge Vergara',
-      email: 'j@javebratt.com',
+    this.afstore.doc<any>('userProfile/'+this.username).set({
+      gpax: this.gpax,
+      credit: this.credit,
    
     })
   
