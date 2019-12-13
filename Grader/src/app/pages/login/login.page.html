@@ -9,9 +9,13 @@
   <ion-card>
   
   <ion-item>
-      <ion-label size = "12" position = "floating" >Create unique username</ion-label>
-      <ion-input type = "text" placeholder="Enter Input"></ion-input>
+      <ion-label size = "12" position = "floating" >username</ion-label>
+      <ion-input type = "text" [(ngModel)] ="id"placeholder="Enter username"></ion-input>
   </ion-item>
+  <ion-item>
+      <ion-label size = "12" position = "floating" >password</ion-label>
+      <ion-input type = "text" [(ngModel)] ="password"placeholder="Enter password"></ion-input>
+  </ion-item>  
   <ion-item>
       
       <ion-label>Year</ion-label>
@@ -41,4 +45,9 @@
     </ion-card>
 
     <ion-button expand = 'block' routerLink="/" routerDirection = 'back'>Home</ion-button> 
+    <ion-button expand = 'block' (click)='submit()'>Submit</ion-button> 
+</ion-content>
+
+<ion-content>
+    <pre>{{userDoc | json | async}}</pre>
 </ion-content>
