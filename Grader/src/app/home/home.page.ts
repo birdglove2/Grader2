@@ -30,16 +30,16 @@ export class HomePage {
 
 }
 
-  getdata(){
+ /* getdata(){
   this.reference=firebase.database().ref('/example')
   this.db.list(this.reference).subscribe(subject=>{
     this.test=subject;
     console.log("subject"+subject);
   });  
-}
+}*/
 
-  async get(){
+ /* async get(){
     return this.afstore
-  }
+  }*/
 
 }
