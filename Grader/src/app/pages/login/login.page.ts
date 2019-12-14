@@ -13,11 +13,13 @@ import * as firebase from 'firebase';
 export class LoginPage implements OnInit {
   [x: string]: any;
 
-  username: string = ""
+  buttonClicked: boolean = false; 
   gpax: number = 0
   credit: number = 0
   year
   major
+  withdrawn
+  creditWithdrawn
 
   constructor(
     public afstore: AngularFirestore,
@@ -30,9 +32,14 @@ export class LoginPage implements OnInit {
    
 
     if(this.gpax == null || this.gpax == 0 || this.credit == null || 
-      this.credit == 0 || this.username == "" || this.year == null || this.major == null) {
+      this.credit == 0 || this.username == "" || this.year == null || 
+      this.major == null || this.withdrawn == null) {
       this.presentAlertVOID();
       return null;
+    }
+
+    if(this.withdrawn == "no") {
+      this.creditWithdrawn = 0;
     }
 
     if(typeof this.gpax != "number" || typeof this.credit != "number") {
@@ -90,11 +97,12 @@ export class LoginPage implements OnInit {
     }
 
     this.afstore.doc<any>('userProfile/'+this.username).set({
-      username:this.username,
       gpax: this.gpax,
       credit: this.credit,
       year: this.year,
       major: this.major,
+      withdrawn: this.withdrawn,
+      creditWithdrawn: this.creditWithdrawn
 
     
 
@@ -104,8 +112,10 @@ export class LoginPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Success',
       subHeader: 'Subtitle',
-      message: "You have created the accout!" + " " + "Student ID: " + this.username  + " " + "GPAX: " 
-      + this.gpax + " " + "Credits taken:  " + " " + this.credit + " " + "Year: " + this.year + " " + "Major: " + this.major,
+      message: "You have created the accout!" + " " + "Student ID: " 
+      + this.username  + " " + "GPAX: " + this.gpax + " " + "Credits taken:  " 
+      + " " + this.credit + " " + "Year: " + this.year + " " + "Major: " 
+      + this.major + "Withdrawn?: " + " " + this.withdrawn + "Credits withdrawn: " + " " + this.creditWithdrawn,
       buttons: ['OK']
     });
 
@@ -175,6 +185,17 @@ export class LoginPage implements OnInit {
   }).catch(function(error) {
     console.log("Error getting document:", error);
   });
+  }
+
+  async onButtonClickYes() {
+    
+    this.buttonClicked = true;
+    
+  }
+  async onButtonClickNo() {
+    
+    this.buttonClicked = false;
+    
   }
 }
 

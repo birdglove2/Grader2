@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-calculated',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculated.page.scss'],
 })
 export class CalculatedPage implements OnInit {
-
-  constructor() { }
+  homepage
+  buttonClicked: boolean = false; 
+  constructor(private platform: Platform) { 
+    this.homepage =  1000; 
+  }
 
   ngOnInit() {
   }
 
+  async onButtonClick() {
+
+    this.buttonClicked = !this.buttonClicked;
 }
+
+}
+

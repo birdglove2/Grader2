@@ -5,8 +5,24 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label >{{homepage}}</ion-label>
+    <ion-button>{{homepage}}</ion-button>
 
+</ion-item>
 
+<button ion-button full round (click)="onButtonClick()">Click</button>
+
+<ion-input *ngIf="buttonClicked" type="text" value="sdfsdfsdfsdf"></ion-input>
+
+<ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="friends">
+      <ion-label>Yes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      <ion-label>No</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 
     <ion-button expand = 'block' routerLink="/" routerDirection = 'back'><ion-icon slot = "start" name = "home"></ion-icon>Home</ion-button> 
 

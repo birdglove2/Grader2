@@ -12,21 +12,42 @@
     </ion-card-header>
   
   <ion-item>
-      <ion-label position = "floating" >Enter your student ID</ion-label>
-      <ion-input type = "text" [(ngModel)] = "username" placeholder="Enter Input"></ion-input>
+    <ion-label position = "floating" >Enter your student ID</ion-label>
+    <ion-input type = "text" [(ngModel)] = "username" placeholder="Enter Input"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position = "floating" >Enter your current GPAX</ion-label>
     <ion-input type = "number" min = "0" max = "4" [(ngModel)] = "gpax" placeholder="Enter GPAX"></ion-input>
-</ion-item>
+  </ion-item>
 
-<ion-item>
-  <ion-label position = "floating" >Enter number of credit taken</ion-label>
-  <ion-input type = "number" min = "0" [(ngModel)] = "credit" placeholder="Enter credits"></ion-input>
-</ion-item>
+  <ion-item>
+    <ion-label position = "floating" >Credit taken including W</ion-label>
+    <ion-input type = "number" min = "0" [(ngModel)] = "credit" placeholder="Enter credits"></ion-input>
+  </ion-item>
 
+  <ion-list-header>Have you withdrawn any courses?</ion-list-header>
 
+  <ion-item>
+    
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)] = "withdrawn">
+    <ion-segment-button (click)="onButtonClickYes()" value="yes">
+      <ion-label>Yes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="onButtonClickNo()" value="no">
+      <ion-label>No</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  </ion-item>
+
+  <div class="center" *ngIf="buttonClicked">
+    <ion-item>
+      <ion-label position = "floating" >Enter number of credit withdrawn</ion-label>
+      <ion-input type = "number" min = "0" [(ngModel)] = "creditWithdrawn" 
+      placeholder="Enter credits withdrawn"></ion-input>
+    </ion-item>
+  </div>
   <ion-item>
       
       <ion-label>Year</ion-label>
@@ -36,20 +57,21 @@
         <ion-select-option value="3rd">Junior</ion-select-option>
         <ion-select-option value="4th">Senior</ion-select-option>
       </ion-select>
-    </ion-item>
+  </ion-item>
 
-    <ion-item>
+  <ion-item>
       
-        <ion-label>Major</ion-label>
-        <ion-select [(ngModel)] = "major" placeholder="Select One">
-          <ion-select-option value="ICE">ICE</ion-select-option>
-          <ion-select-option value="ADME">ADME</ion-select-option>
-          <ion-select-option value="AERO">AERO</ion-select-option>
-          <ion-select-option value="NANOb">NANO BIO</ion-select-option>
-          <ion-select-option value="NANOm">NANO MAT</ion-select-option>
-          <ion-select-option value="AI">AI</ion-select-option>
-        </ion-select>
-      </ion-item>
+    <ion-label>Major</ion-label>
+      <ion-select [(ngModel)] = "major" placeholder="Select One">
+        <ion-select-option value="ICE">ICE</ion-select-option>
+        <ion-select-option value="ADME">ADME</ion-select-option>
+        <ion-select-option value="AERO">AERO</ion-select-option>
+        <ion-select-option value="NANOb">NANO BIO</ion-select-option>
+        <ion-select-option value="NANOm">NANO MAT</ion-select-option>
+        <ion-select-option value="AI">AI</ion-select-option>
+      </ion-select>
+
+  </ion-item>
 
       
 
