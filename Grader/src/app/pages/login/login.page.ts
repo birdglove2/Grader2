@@ -112,16 +112,7 @@ export class LoginPage implements OnInit {
     await alert.present();
   
   }
-  /*async get(){
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: this.afstore,
-      buttons: ['OK']
-    });
-
-  }*/
-
+ 
   ngOnInit() {
   }
 
@@ -188,5 +179,4 @@ export class LoginPage implements OnInit {
 }
 
 
-}
 
