@@ -14,8 +14,8 @@ export class LoginPage implements OnInit {
 
   userDoc: string = ""
   username: string = ""
-  gpax: number = 0.0
-  credit: number = 0.0
+  gpax: number = 0
+  credit: number = 0
   year
   major
 
@@ -26,8 +26,12 @@ export class LoginPage implements OnInit {
 
 
   async submit() {
+    if(this.gpax == null || this.credit == null || this.username == "" || this.year == null || this.major == null) {
+      this.presentAlertVOID();
+      return null;
+    }
 
-    if(this.gpax > 4 || this.gpax <0) {
+    if(this.gpax > 4 || this.gpax < 0) {
       this.presentAlertGPAX();
       return null;
     }
@@ -113,6 +117,17 @@ export class LoginPage implements OnInit {
       header: 'Alert',
       subHeader: 'Subtitle',
       message: "Exceed maximum credits for your major!",
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  async presentAlertVOID() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: "Please fill in all the information",
       buttons: ['OK']
     });
 
