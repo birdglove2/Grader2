@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 import { AngularFirestore } from '@angular/fire/firestore';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-login',
@@ -89,6 +90,7 @@ export class LoginPage implements OnInit {
     }
 
     this.afstore.doc<any>('userProfile/'+this.username).set({
+      username:this.username,
       gpax: this.gpax,
       credit: this.credit,
       year: this.year,
@@ -145,6 +147,7 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
+ 
   async presentAlertVOID() {
     const alert = await this.alertController.create({
       header: 'Alert',
@@ -168,6 +171,22 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
+  async getdatafromid() {
+    firebase.firestore().collection("userProfile").doc(this.username)
+    .get()
+    .then(function(doc) {
+    if (doc.exists) {
+      console.log("Document data:", doc.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  }).catch(function(error) {
+    console.log("Error getting document:", error);
+  });
+  }
+}
 
 
 }
+
