@@ -11,8 +11,9 @@ import * as firebase from 'firebase';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  static username: string;
   [x: string]: any;
-
+  
   buttonClicked: boolean = false; 
   gpax: number = 0
   credit: number = 0
@@ -122,6 +123,9 @@ export class LoginPage implements OnInit {
     await alert.present();
   
   }
+
+
+
  
   ngOnInit() {
   }

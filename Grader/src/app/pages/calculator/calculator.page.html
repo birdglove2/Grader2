@@ -24,13 +24,20 @@
       <ion-input type = "number" min = "0" max = "4" [(ngModel)] = "gpax" placeholder="Enter GPAX"></ion-input>
   </ion-item>
 
-  <ion-button expand = "block" fill = "outline" routerLink = "/calculated/" routerDirection = 'forward'>Calculate</ion-button>
+  <ion-button (click) = "fetch()" expand = "block" 
+  fill = "outline" >Fetch</ion-button>
+
+  <ion-button (click) = "getdatafromid()" expand = "block" 
+  fill = "outline" [routerLink] = "fillall ? ['/calculated'] : []" routerDirection = 'forward'>Calculate</ion-button>
 
 
 
 
 </ion-card>
 
-    <ion-button expand = 'block' routerLink="/" routerDirection = 'back'><ion-icon slot = "start" name = "home"></ion-icon>Home</ion-button> 
+    <ion-button expand = 'block' routerLink="/" 
+    routerDirection = 'back'><ion-icon slot = "start" name = "home"></ion-icon>Home</ion-button> 
+
+  
 
 </ion-content>
