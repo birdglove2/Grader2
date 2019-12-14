@@ -18,7 +18,7 @@
 
   <ion-item>
     <ion-label position = "floating" >Enter your current GPAX</ion-label>
-    <ion-input type = "number" [(ngModel)] = "gpax" placeholder="Enter GPAX"></ion-input>
+    <ion-input type = "number" min = "0" max = "4" [(ngModel)] = "gpax" placeholder="Enter GPAX"></ion-input>
 </ion-item>
 
 <ion-item>
@@ -55,8 +55,8 @@
 
     </ion-card>
 
-    <ion-button (click) = "test()" expand = "block" id = "btn-add">Submit</ion-button>
-
+    <ion-button (click) = "submit()" expand = "block" id = "btn-add">Submit</ion-button>
 
     <ion-button expand = 'block' routerLink="/" routerDirection = 'back'><ion-icon slot = "start" name = "home"></ion-icon>Home</ion-button> 
 </ion-content>
+
