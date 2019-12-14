@@ -102,7 +102,8 @@ export class LoginPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Success',
       subHeader: 'Subtitle',
-      message: "You have created the accout!" + "    " +this.username  + "    " + this.gpax + "   " + this.credit,
+      message: "You have created the accout!" + " " + "Student ID: " + this.username  + " " + "GPAX: " 
+      + this.gpax + " " + "Credits taken:  " + " " + this.credit + " " + "Year: " + this.year + " " + "Major: " + this.major,
       buttons: ['OK']
     });
 
