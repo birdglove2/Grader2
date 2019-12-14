@@ -24,6 +24,10 @@ const routes: Routes = [
     path: 'todo',
     loadChildren: () => import('./pages/todo/todo.module').then( m => m.TodoPageModule)
   },
+  {
+    path: 'calculated',
+    loadChildren: () => import('./pages/calculated/calculated.module').then( m => m.CalculatedPageModule)
+  },
 ];
 
 @NgModule({
