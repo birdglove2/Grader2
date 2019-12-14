@@ -87,6 +87,15 @@ export class HomePage {
 
     await alert.present();
   }
+  async getid() {
+    const events = await firebase.firestore().collection('userProfile')
+    events.get().then((querySnapshot) => {
+        const tempDoc = querySnapshot.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() }
+        })
+        console.log(tempDoc)
+      })
+  }
 }
 
 
