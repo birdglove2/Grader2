@@ -23,7 +23,7 @@
 
 <ion-item>
   <ion-label position = "floating" >Enter number of credit taken</ion-label>
-  <ion-input type = "number" [(ngModel)] = "credit" placeholder="Enter credits"></ion-input>
+  <ion-input type = "number" min = "0" [(ngModel)] = "credit" placeholder="Enter credits"></ion-input>
 </ion-item>
 
 
@@ -45,7 +45,8 @@
           <ion-select-option value="ice">ICE</ion-select-option>
           <ion-select-option value="adme">ADME</ion-select-option>
           <ion-select-option value="aero">AERO</ion-select-option>
-          <ion-select-option value="nano">NANO</ion-select-option>
+          <ion-select-option value="nanob">NANO BIO</ion-select-option>
+          <ion-select-option value="nanom">NANO MAT</ion-select-option>
           <ion-select-option value="ai">AI</ion-select-option>
         </ion-select>
       </ion-item>

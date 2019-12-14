@@ -12,7 +12,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class LoginPage implements OnInit {
   [x: string]: any;
 
-  userDoc: string = ""
   username: string = ""
   gpax: number = 0
   credit: number = 0
@@ -26,10 +25,21 @@ export class LoginPage implements OnInit {
 
 
   async submit() {
-    if(this.gpax == null || this.credit == null || this.username == "" || this.year == null || this.major == null) {
+
+   
+
+    if(this.gpax == null || this.gpax == 0 || this.credit == null || 
+      this.credit == 0 || this.username == "" || this.year == null || this.major == null) {
       this.presentAlertVOID();
       return null;
     }
+
+    if(typeof this.gpax != "number" || typeof this.credit != "number") {
+      this.presentAlertType();
+      return null;
+    }
+
+    
 
     if(this.gpax > 4 || this.gpax < 0) {
       this.presentAlertGPAX();
@@ -133,6 +143,19 @@ export class LoginPage implements OnInit {
 
     await alert.present();
   }
+
+
+  async presentAlertType() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: "Enter number for GPAX or Credit",
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
 
 
 }
