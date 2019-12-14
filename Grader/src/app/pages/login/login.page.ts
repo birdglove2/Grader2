@@ -70,8 +70,8 @@ export class LoginPage implements OnInit {
     else if(this.major == "nanob") {
       if(this.credit > 147 || this.credit < 0) {
         this.presentAlertCredit();
-      }
         return null;
+      }
     }
 
     else if(this.major == "nanom") {
@@ -94,8 +94,19 @@ export class LoginPage implements OnInit {
       year: this.year,
       major: this.major,
 
+    
+
    
     })
+
+    const alert = await this.alertController.create({
+      header: 'Success',
+      subHeader: 'Subtitle',
+      message: "You have created the accout!" + "    " +this.username  + "    " + this.gpax + "   " + this.credit,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   
   }
   /*async get(){
