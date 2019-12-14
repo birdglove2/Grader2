@@ -10,4 +10,14 @@
     This app is available for ISE students freshmen to seniors. First, you need to enter your information with unique username. Second, enter your user name with desirable grades to calculate how many A's or B's you need to get.
   </ion-label>
 
+
+  <ion-item>
+
+    <ion-label>Time</ion-label>
+    
+    <ion-input type=“number” [(ngModel)]=“time” required=“true” clearInput=true (ionChange)=“setTime(time)”></ion-input>
+    
+    </ion-item>
+ 
 </ion-content>
+
