@@ -13,10 +13,9 @@ import * as firebase from 'firebase';
 export class LoginPage implements OnInit {
   [x: string]: any;
 
-  userDoc: string = ""
   username: string = ""
-  gpax: number = 0.0
-  credit: number = 0.0
+  gpax: number = 0
+  credit: number = 0
   year
   major
 
@@ -28,7 +27,22 @@ export class LoginPage implements OnInit {
 
   async submit() {
 
-    if(this.gpax > 4 || this.gpax <0) {
+   
+
+    if(this.gpax == null || this.gpax == 0 || this.credit == null || 
+      this.credit == 0 || this.username == "" || this.year == null || this.major == null) {
+      this.presentAlertVOID();
+      return null;
+    }
+
+    if(typeof this.gpax != "number" || typeof this.credit != "number") {
+      this.presentAlertType();
+      return null;
+    }
+
+    
+
+    if(this.gpax > 4 || this.gpax < 0) {
       this.presentAlertGPAX();
       return null;
     }
@@ -57,8 +71,8 @@ export class LoginPage implements OnInit {
     else if(this.major == "nanob") {
       if(this.credit > 147 || this.credit < 0) {
         this.presentAlertCredit();
-      }
         return null;
+      }
     }
 
     else if(this.major == "nanom") {
@@ -82,8 +96,20 @@ export class LoginPage implements OnInit {
       year: this.year,
       major: this.major,
 
+    
+
    
     })
+
+    const alert = await this.alertController.create({
+      header: 'Success',
+      subHeader: 'Subtitle',
+      message: "You have created the accout!" + " " + "Student ID: " + this.username  + " " + "GPAX: " 
+      + this.gpax + " " + "Credits taken:  " + " " + this.credit + " " + "Year: " + this.year + " " + "Major: " + this.major,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   
   }
   /*async get(){
@@ -120,7 +146,31 @@ export class LoginPage implements OnInit {
 
     await alert.present();
   }
+
  
+  async presentAlertVOID() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: "Please fill in all the information",
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+
+  async presentAlertType() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: "Enter number for GPAX or Credit",
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
   async getdatafromid() {
     firebase.firestore().collection("userProfile").doc(this.username)
     .get()
@@ -136,3 +186,7 @@ export class LoginPage implements OnInit {
   });
   }
 }
+
+
+}
+
