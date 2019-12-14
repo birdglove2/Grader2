@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AlertController } from '@ionic/angular';
+
 import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-login',
@@ -7,6 +9,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  [x: string]: any;
 
   userDoc: string = ""
   username: string = ""
@@ -15,7 +18,8 @@ export class LoginPage implements OnInit {
   year
 
   constructor(
-    public afstore: AngularFirestore
+    public afstore: AngularFirestore,
+    public alertController: AlertController
     ) { }
 
 
@@ -30,8 +34,28 @@ export class LoginPage implements OnInit {
     })
   
   }
+  /*async get(){
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: this.afstore,
+      buttons: ['OK']
+    });
+
+  }*/
 
   ngOnInit() {
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: this.username,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 }
