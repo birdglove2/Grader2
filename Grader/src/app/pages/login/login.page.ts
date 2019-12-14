@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
     ) { }
 
 
-  async test() {
+  async submit() {
 
     if(this.gpax > 4 || this.gpax <0) {
       this.presentAlertGPAX();
