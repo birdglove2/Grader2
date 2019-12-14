@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
   year
   major
   constructor(
-    
+    public afstore: AngularFirestore,
     public alertController: AlertController
     ) { }
 
