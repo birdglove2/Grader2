@@ -46,6 +46,10 @@ export class LoginPage implements OnInit {
       return null;
     }
 
+    if(this.username.length != 10) {
+      this.presentAlertUsername();
+      return null;
+    }
   
     if(this.withdrawn == "no") {
       this.withdrawn1 = 0;
@@ -158,8 +162,8 @@ export class LoginPage implements OnInit {
 
   async presentAlertGPAX() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
+      header: 'Error',
+      subHeader: '',
       message: "Exceed maximum GPAX!",
       buttons: ['OK']
     });
@@ -169,8 +173,8 @@ export class LoginPage implements OnInit {
 
   async presentAlertCredit() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
+      header: 'Error',
+      subHeader: '',
       message: "Exceed maximum credits for your major!",
       buttons: ['OK']
     });
@@ -178,11 +182,21 @@ export class LoginPage implements OnInit {
     await alert.present();
   }
 
+  async presentAlertUsername() {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      subHeader: '',
+      message: "Please enter student ID",
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
  
   async presentAlertVOID() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
+      header: 'Error',
+      subHeader: '',
       message: "Please fill in all the information",
       buttons: ['OK']
     });
@@ -193,8 +207,8 @@ export class LoginPage implements OnInit {
 
   async presentAlertType() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
+      header: 'Error',
+      subHeader: '',
       message: "Enter number for GPAX or Credit",
       buttons: ['OK']
     });

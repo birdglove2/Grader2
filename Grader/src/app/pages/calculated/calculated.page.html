@@ -1,9 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>calculated</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
@@ -26,8 +24,10 @@
         Year:  {{data.year}}
 
       </ion-item>
+
       <ion-item>
         Major:  {{data.major}}
+
       </ion-item>
       <ion-item>
         Credits taken(including W):  {{data.credit}}
@@ -56,9 +56,7 @@
     </ion-card-content>
   </ion-card>
 
-<button ion-button full round (click)="onButtonClick()">Click</button>
 
-<ion-input *ngIf="buttonClicked" type="text" value="sdfsdfsdfsdf"></ion-input>
 
 
 

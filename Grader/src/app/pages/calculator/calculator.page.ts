@@ -78,7 +78,7 @@ export class CalculatorPage implements OnInit {
         if (doc.exists) {
           console.log("Document data:", doc.data());
           this.gpax = doc.data().gpax;
-          this.credit = doc.data().gpax;
+          this.credit = doc.data().credit;
           this.year = doc.data().year;
           this.major = doc.data().major;
           this.withdrawn = doc.data().withdrawn
@@ -177,21 +177,6 @@ export class CalculatorPage implements OnInit {
  
 
 
-  this.user = {
-  username: this.username,
-  gpax: this.gpax,
-  gpaxDesired: this.gpaxDesired,
-  credit: this.credit,
-  year: this.year,
-  major: this.major,
-  withdrawn: this.withdrawn,
-  creditWithdrawn: this.creditWithdrawn,
-  withdrawn1: this.withdrawn1,
-  withdrawn2: this.withdrawn2,
-  withdrawn3: this.withdrawn3,
-  withdrawn4: this.withdrawn4
-
-}
 
 
 
@@ -207,12 +192,30 @@ export class CalculatorPage implements OnInit {
   
   async getdatafromid() {
 
+
     if(this.fillall == false) {
       this.presentAlertfetch();
       return null;
 
     } else {
 
+
+  this.user = {
+    username: this.username,
+    gpax: this.gpax,
+    gpaxDesired: this.gpaxDesired,
+    credit: this.credit,
+    year: this.year,
+    major: this.major,
+    withdrawn: this.withdrawn,
+    creditWithdrawn: this.creditWithdrawn,
+    withdrawn1: this.withdrawn1,
+    withdrawn2: this.withdrawn2,
+    withdrawn3: this.withdrawn3,
+    withdrawn4: this.withdrawn4,
+    semester: this.semester
+  
+  }
     
 
     let navigationExtras: NavigationExtras = {
@@ -230,8 +233,8 @@ export class CalculatorPage implements OnInit {
 
   async presentAlertGPAX() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
+      header: 'Error',
+      subHeader: '',
       message: "Exceed maximum GPAX!",
       buttons: ['OK']
     });
@@ -241,8 +244,8 @@ export class CalculatorPage implements OnInit {
   
   async presentAlertVOID() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
+      header: 'Error',
+      subHeader: '',
       message: "Please fill in all the information",
       buttons: ['OK']
     });
@@ -252,8 +255,8 @@ export class CalculatorPage implements OnInit {
 
   async presentAlertfetch() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
+      header: 'Error',
+      subHeader: '',
       message: "Please fill in all the information and click fetch",
       buttons: ['OK']
     });
@@ -263,8 +266,8 @@ export class CalculatorPage implements OnInit {
 
   async presentAlertUsername() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Subtitle',
+      header: 'Error',
+      subHeader: '',
       message: "Student ID does not exist",
       buttons: ['OK']
     });
