@@ -21,7 +21,8 @@ export class LoginPage implements OnInit {
   major
   withdrawn
   creditWithdrawn
-
+  j=3.0
+  k=4.0
   constructor(
     public afstore: AngularFirestore,
     public alertController: AlertController
@@ -182,6 +183,7 @@ export class LoginPage implements OnInit {
     .then(function(doc) {
     if (doc.exists) {
       console.log("Document data:", doc.data());
+      console.log(doc.data().gpax)
     } else {
       
       console.log("No such document!");
@@ -201,7 +203,67 @@ export class LoginPage implements OnInit {
     this.buttonClicked = false;
     
   }
+
+ 
+
+  async getgrade(gradewant){
+    
+    firebase.firestore().collection("userProfile").doc(this.username)
+    .get()
+    .then(function(doc) {
+    if (doc.exists) {
+      var gpax = doc.data().gpax
+      const credittaken = doc.data().credit
+      const creditWithdrawn = doc.data().creditWithdrawn
+      
+      var valueneed = (gradewant *146)-(gpax*(credittaken-creditWithdrawn))
+      const gradelist =  [0.0, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0]
+      const creditlist =  [5.0, 8.0, 84.0, 6.0, 9.0]
+  
+      var sum =0.0
+      var ggg=0
+      var ccc=0
+      var count=0
+    
+      for (let i=0;i<146-34;i++){
+        for (let j=0;j<4;j++){
+          if  (sum < valueneed){
+            sum+= (gradelist[ggg]*creditlist[ccc])
+            console.log(sum)
+            count+=1
+            ccc+=1
+            if (ccc ==5){
+              ccc=0
+            }
+            if  (count == 5){
+              if (sum < valueneed){
+              ggg+=1
+              count = 0
+              sum=0
+              }
+            }
+          }      
+        }
+      }  
+      console.log('least grade is ',gradelist[ggg])
+      console.log(sum)
+      console.log('done')
+      console.log(valueneed) 
+    
+    
+    }else {
+      console.log("No such document!");
+    }
+  }).catch(function(error) {
+    console.log("Error getting document:", error);
+  })
+    
+    
+  }
 }
+
+  
+
 
 
 
