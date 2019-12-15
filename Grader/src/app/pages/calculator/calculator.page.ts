@@ -7,7 +7,7 @@ import * as firebase from 'firebase';
 import { LoginPage } from '../login/login.page';
 
 import { NavController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 
 @Component({
@@ -24,6 +24,7 @@ export class CalculatorPage implements OnInit {
     public alertController: AlertController,
     private router : Router) { }
 
+    user
     username
     gpaxDesired
     gpax
@@ -32,6 +33,9 @@ export class CalculatorPage implements OnInit {
     major
     withdrawn
     creditWithdrawn
+
+    
+   
 
   ngOnInit() {
   }
@@ -60,6 +64,17 @@ export class CalculatorPage implements OnInit {
           this.withdrawn = doc.data().withdrawn
           this.creditWithdrawn = doc.data().creditWithdrawn;
           this.fillall = true;
+          this.user = {
+            username: this.username,
+            gpax: this.gpax,
+            gpaxDesired: this.gpaxDesired,
+            credit: this.credit,
+            year: this.year,
+            major: this.major,
+            withdrawn: this.withdrawn,
+            creditWithdrawn: this.creditWithdrawn
+      
+          }
         } else {
           
           console.log("No such document!");
@@ -81,9 +96,23 @@ export class CalculatorPage implements OnInit {
 
     if(this.fillall == false) {
       this.presentAlertfetch();
+      return null;
+
+    } else {
+
+    
+
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(this.user)
+      }
+
     }
 
-  
+    this.router.navigate(['calculated'], navigationExtras);
+    
+
+    }
   }
 
   async presentAlertGPAX() {

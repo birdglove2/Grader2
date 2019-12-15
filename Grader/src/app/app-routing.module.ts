@@ -25,7 +25,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/todo/todo.module').then( m => m.TodoPageModule)
   },
   {
-    path: 'calculated/:myid',
+    path: 'calculated',
     loadChildren: () => import('./pages/calculated/calculated.module').then( m => m.CalculatedPageModule)
   },
 ];
