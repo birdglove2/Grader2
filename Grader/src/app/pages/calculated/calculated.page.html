@@ -29,9 +29,25 @@
       <ion-item>
         Major:  {{data.major}}
       </ion-item>
+      <ion-item>
+        Credits taken(including W):  {{data.credit}}
+        
+      </ion-item>
+      <ion-item>
+        Credits withdrawn: {{data.creditWithdrawn}}
+      </ion-item>
     </ion-card-content>
 
 
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        Expected GPAX: {{data.gpaxDesired}}
+      </ion-item>
+      
+    </ion-card-content>
   </ion-card>
 
 <button ion-button full round (click)="onButtonClick()">Click</button>
