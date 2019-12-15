@@ -149,7 +149,7 @@ export class CalculatorPage implements OnInit {
             if (sum < valueneed){
               ggg+=1
               count = 0
-              sum=0
+              sum=0 
             }
           }
         }      

@@ -151,6 +151,17 @@ export class LoginPage implements OnInit {
     });
 
     await alert.present();
+
+    this.username = null;
+    this.gpax = null;
+    this.withdrawn = null;
+    this.major = null;
+    this.year = null,
+    this.semester = null;
+    this.withdrawn1 = null;
+    this.withdrawn2 = null;
+    this.withdrawn3 = null;
+    this.withdrawn4 = null;
   
   }
 
