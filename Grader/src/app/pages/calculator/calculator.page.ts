@@ -32,6 +32,11 @@ export class CalculatorPage implements OnInit {
     year
     major
     withdrawn
+    withdrawn1
+    withdrawn2
+    withdrawn3
+    withdrawn4
+    semester
     creditWithdrawn
     gradelist =  [0.0, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0]
     creditlistICE =  [9.0, 8.0, 114.0, 0.0, 6.0, 9.0]
@@ -78,6 +83,11 @@ export class CalculatorPage implements OnInit {
           this.major = doc.data().major;
           this.withdrawn = doc.data().withdrawn
           this.creditWithdrawn = doc.data().creditWithdrawn;
+          this.withdrawn1 = doc.data().withdrawn1
+          this.withdrawn2 = doc.data().withdrawn2
+          this.withdrawn3 = doc.data().withdrawn3
+          this.withdrawn4 = doc.data().withdrawn4
+          this.semester = doc.data().semester
           this.fillall = true;
           
 
@@ -164,18 +174,7 @@ export class CalculatorPage implements OnInit {
 
 
 
-  firebase.firestore().collection("userProfile").doc(this.username)
-  .get()
-  .then(function(doc) {
-  if (doc.exists) {
-    
-  
-  }else {
-    console.log("No such document!");
-  }
-}).catch(function(error) {
-  console.log("Error getting document:", error);
-})
+ 
 
 
   this.user = {
@@ -186,7 +185,11 @@ export class CalculatorPage implements OnInit {
   year: this.year,
   major: this.major,
   withdrawn: this.withdrawn,
-  creditWithdrawn: this.creditWithdrawn 
+  creditWithdrawn: this.creditWithdrawn,
+  withdrawn1: this.withdrawn1,
+  withdrawn2: this.withdrawn2,
+  withdrawn3: this.withdrawn3,
+  withdrawn4: this.withdrawn4
 
 }
 
