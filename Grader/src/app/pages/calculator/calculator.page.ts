@@ -6,6 +6,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 import { LoginPage } from '../login/login.page';
 
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-calculator',
@@ -15,11 +18,21 @@ import { LoginPage } from '../login/login.page';
 export class CalculatorPage implements OnInit {
   doc: any;
   fillall:boolean = false;
+
+
   constructor(public afstore: AngularFirestore,
-    public alertController: AlertController) { }
+    public alertController: AlertController,
+    private router : Router) { }
+
     username
     gpaxDesired
-    
+    gpax
+    credit
+    year
+    major
+    withdrawn
+    creditWithdrawn
+
   ngOnInit() {
   }
 
@@ -40,6 +53,12 @@ export class CalculatorPage implements OnInit {
       firebase.firestore().collection("userProfile").doc(this.username).get().then((doc)  => {
         if (doc.exists) {
           console.log("Document data:", doc.data());
+          this.gpax = doc.data().gpax;
+          this.credit = doc.data().gpax;
+          this.year = doc.data().year;
+          this.major = doc.data().major;
+          this.withdrawn = doc.data().withdrawn
+          this.creditWithdrawn = doc.data().creditWithdrawn;
           this.fillall = true;
         } else {
           
@@ -63,8 +82,8 @@ export class CalculatorPage implements OnInit {
     if(this.fillall == false) {
       this.presentAlertfetch();
     }
-    
 
+  
   }
 
   async presentAlertGPAX() {
