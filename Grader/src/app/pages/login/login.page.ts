@@ -20,7 +20,13 @@ export class LoginPage implements OnInit {
   year
   major
   withdrawn
+  withdrawn1
+  withdrawn2
+  withdrawn3
+  withdrawn4
   creditWithdrawn
+  semester
+
   j=3.0
   k=4.0
   constructor(
@@ -35,13 +41,27 @@ export class LoginPage implements OnInit {
 
     if(this.gpax == null || this.gpax == 0 || this.credit == null || 
       this.credit == 0 || this.username == "" || this.year == null || 
-      this.major == null || this.withdrawn == null) {
+      this.major == null || this.withdrawn == null || this.semester == null) {
       this.presentAlertVOID();
       return null;
     }
 
+  
     if(this.withdrawn == "no") {
-      this.creditWithdrawn = 0;
+      this.withdrawn1 = 0;
+      this.withdrawn2 = 0;
+      this.withdrawn3 = 0;
+      this.withdrawn4 = 0;
+    } else {
+
+      if(this.withdrawn1 == null || this.withdrawn2 == null || 
+        this.withdrawn3 == null || this.withdrawn4 == null) {
+
+          this.presentAlertVOID();
+          return null;
+        }
+
+
     }
 
     if(typeof this.gpax != "number" || typeof this.credit != "number") {
@@ -104,7 +124,12 @@ export class LoginPage implements OnInit {
       year: this.year,
       major: this.major,
       withdrawn: this.withdrawn,
-      creditWithdrawn: this.creditWithdrawn
+      withdrawn1: this.withdrawn1,
+      withdrawn2: this.withdrawn2,
+      withdrawn3: this.withdrawn3,
+      withdrawn4: this.withdrawn4,
+      creditWithdrawn: (1*this.withdrawn1+2*this.withdrawn2+3*this.withdrawn3+4*this.withdrawn4),
+      semester: this.semester
 
     
 
@@ -117,7 +142,7 @@ export class LoginPage implements OnInit {
       message: "You have created the accout!" + " " + "Student ID: " 
       + this.username  + " " + "GPAX: " + this.gpax + " " + "Credits taken:  " 
       + " " + this.credit + " " + "Year: " + this.year + " " + "Major: " 
-      + this.major + "Withdrawn?: " + " " + this.withdrawn + "Credits withdrawn: " + " " + this.creditWithdrawn,
+      + this.major + " " + "Withdrawn?: " + " " + this.withdrawn + " " + "Semester: " + " " + this.semester,
       buttons: ['OK']
     });
 
