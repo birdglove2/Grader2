@@ -18,19 +18,19 @@ export class CalculatorPage implements OnInit {
   constructor(public afstore: AngularFirestore,
     public alertController: AlertController) { }
     username
-    gpax
+    gpaxDesired
     
   ngOnInit() {
   }
 
   async fetch() {
 
-    if(this.gpax > 4 || this.gpax < 0) {
+    if(this.gpaxDesired > 4 || this.gpaxDesired < 0) {
       this.presentAlertGPAX();
       return null;
     }
 
-    if(this.username == "" || this.gpax == null) {
+    if(this.username == "" || this.gpaxDesired == null) {
       this.presentAlertVOID();
       return null;
     }
