@@ -31,13 +31,13 @@ export class CalculatorPage implements OnInit {
     credit
     year
     major
-    withdrawn
-    withdrawn1
-    withdrawn2
-    withdrawn3
-    withdrawn4
-    semester
-    creditWithdrawn
+    withdrawn = null
+    withdrawn1 = null
+    withdrawn2 = null
+    withdrawn3 = null
+    withdrawn4 = null
+    semester = null
+    creditWithdrawn = null
     gradelist =  [0.0, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0]
     creditlistICE =  [9.0, 8.0, 114.0, 0.0, 6.0, 9.0]
     creditlistADME = [8.0,4.0,135.0,0.0,0.0,0.0]
@@ -181,6 +181,16 @@ export class CalculatorPage implements OnInit {
 
 
 
+  this.username = null;
+  this.gpaxDesired = null;
+  const alert = await this.alertController.create({
+    header: 'Fetched',
+    subHeader: '',
+    message: "Please click Calculate",
+    buttons: ['OK']
+  });
+
+  await alert.present();
 
   
       
