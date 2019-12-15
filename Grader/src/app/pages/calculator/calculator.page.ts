@@ -6,6 +6,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 import { LoginPage } from '../login/login.page';
 
+
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.page.html',
@@ -23,6 +24,11 @@ export class CalculatorPage implements OnInit {
   }
 
   async fetch() {
+
+    if(this.gpax > 4 || this.gpax < 0) {
+      this.presentAlertGPAX();
+      return null;
+    }
 
     if(this.username == "" || this.gpax == null) {
       this.presentAlertVOID();
@@ -61,6 +67,17 @@ export class CalculatorPage implements OnInit {
 
   }
 
+  async presentAlertGPAX() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: "Exceed maximum GPAX!",
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+  
   async presentAlertVOID() {
     const alert = await this.alertController.create({
       header: 'Alert',
