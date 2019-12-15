@@ -225,11 +225,10 @@ export class LoginPage implements OnInit {
       var ccc=0
       var count=0
     
-      for (let i=0;i<146-34;i++){
-        for (let j=0;j<4;j++){
+      while (sum<valueneed){
           if  (sum < valueneed){
             sum+= (gradelist[ggg]*creditlist[ccc])
-            console.log(sum)
+            //console.log(sum)
             count+=1
             ccc+=1
             if (ccc ==5){
@@ -243,12 +242,13 @@ export class LoginPage implements OnInit {
               }
             }
           }      
-        }
-      }  
+      }
+        
       console.log('least grade is ',gradelist[ggg])
-      console.log(sum)
+      console.log('sum',sum)
       console.log('done')
-      console.log(valueneed) 
+      console.log('value need',valueneed) 
+      console.log('asldmaldk')
     
     
     }else {
@@ -260,10 +260,177 @@ export class LoginPage implements OnInit {
     
     
   }
+
+
+
+
+
+  async supergetgrade(){
+    const creditt = [1,2,3,4,6,9]
+    const numcredit = [9,4,38,0,1,1]
+    const numcredit2 = [5,4,28,0,1,1]
+
+    const diffgrade =0.5
+
+    const need = 512
+    var summ=0
+
+
+var cc=0
+var countn=0
+var counts=0
+var pivot=0
+var time=1
+
+
+const gradebound=0
+var gradenow=0
+
+
+var countcredit1 = { 0.0 :0 , 1.0 :0 , 1.5 :0 , 2.0 :0 , 2.5 :0 , 3.0:0 , 3.5:0, 4.0:0}
+var countcredit2 = { 0.0 :0 , 1.0 :0 , 1.5 :0 , 2.0 :0 , 2.5 :0 , 3.0:0 , 3.5:0, 4.0:0}
+var countcredit3 = { 0.0 :0 , 1.0 :0 , 1.5 :0 , 2.0 :0 , 2.5 :0 , 3.0:0 , 3.5:0, 4.0:0}
+var countcredit4 = { 0.0 :0 , 1.0 :0 , 1.5 :0 , 2.0 :0 , 2.5 :0 , 3.0:0 , 3.5:0, 4.0:0}
+var countcredit6 = { 0.0 :0 , 1.0 :0 , 1.5 :0 , 2.0 :0 , 2.5 :0 , 3.0:0 , 3.5:0, 4.0:0}
+var countcredit9 = { 0.0 :0 , 1.0 :0 , 1.5 :0 , 2.0 :0 , 2.5 :0 , 3.0:0 , 3.5:0, 4.0:0}
+
+countcredit1[gradebound]= numcredit[0] 
+countcredit2[gradebound]= numcredit[1]
+countcredit3[gradebound]= numcredit[2]
+countcredit4[gradebound]= numcredit[3]
+countcredit6[gradebound]= numcredit[4]
+countcredit9[gradebound]= numcredit[5]
+
+var superget=''
+while (superget!='done'){
+  if (summ  < need) {
+        summ += (0.5*creditt[cc])
+        gradenow=gradebound+0.5*time
+        time+=1
+  }
+
+  if (cc =0){ 
+    if (gradenow in countcredit1 && summ>need){
+      counts+=1
+      countcredit1[gradenow]=counts
+      countcredit1[gradebound] -= counts
+  }
+
+  if (cc=1){
+    if (gradenow in countcredit2 && summ>need){
+      counts+=1
+      countcredit2[gradenow]=counts
+      countcredit2[gradebound] -= counts
+    } 
+  }
+
+  if (cc=2){
+    if (gradenow in countcredit3 && summ>need){
+      counts+=1
+      countcredit3[gradenow]= counts
+      countcredit3[gradebound] -= counts
+    }
+  }
+  if (cc ==3){
+    if (gradenow in countcredit4 && summ>need){
+      counts+=1
+      countcredit4[gradenow]=counts
+      countcredit4[gradebound] -= counts
+    }
+  }
+
+  if (cc ==4){
+    if (gradenow in countcredit6 && summ>need){
+      counts+=1
+      countcredit6[gradenow]=counts
+      countcredit6[gradebound] -= counts
+    }  
+  }
+  if (cc ==5){
+    if (gradenow in countcredit9 && summ>need){
+      counts+=1
+      countcredit9[gradenow]=counts
+      countcredit9[gradebound] -= counts
+    }
+  }
+
+
+
+  if (gradenow ==4.0){
+          countn+=1
+
+          if (cc ==0){
+            if (gradenow in countcredit1){
+                countcredit1[gradenow]=countn
+                countcredit1[gradebound]=numcredit[0]-countn
+            }
+          }
+          if (cc==1){
+            if (gradenow in countcredit2){
+                countcredit2[gradenow]=countn
+                countcredit2[gradebound]=numcredit[1]-countn
+            }
+          }
+
+          if (cc ==2){
+            if (gradenow in countcredit3){
+                countcredit3[gradenow]=countn
+                countcredit3[gradebound]=numcredit[2]-countn
+            }
+          }
+
+          if (cc ==3){
+            if (gradenow in countcredit4){
+                countcredit4[gradenow]=countn
+                countcredit4[gradebound]=numcredit[3]-countn
+            }
+          }
+
+          if (cc ==4){
+            if (gradenow in countcredit6){
+                countcredit6[gradenow]=countn
+                countcredit6[gradebound]=numcredit[4]-countn
+            }
+          }
+
+          if (cc ==5){
+            if (gradenow in countcredit9){
+                countcredit9[gradenow]=countn          
+                countcredit9[gradebound]=numcredit[5]-countn      
+            }
+          }
+
+          
+          gradenow =gradebound
+          time=1
+      
+  if (countn == numcredit[pivot]){
+      pivot+=1
+      countn=0
+      cc+=1
+  }
+
+  if (summ>=need || cc >5) {
+    console.log('1',countcredit1)
+    console.log('2',countcredit2)
+    console.log('3',countcredit3)
+    console.log('4',countcredit4)
+    console.log('6',countcredit6)
+    console.log('9',countcredit9)
+    superget = 'done'
+    break
+  }
+  }
+    
+
+
+
+
+
+
+
+ }  
 }
-
+}
+}
   
-
-
-
-
