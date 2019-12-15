@@ -18,13 +18,16 @@
 
       </ion-card-title>
       <ion-card-subtitle>
-        {{data.gpax}}
+        Current GPAX: {{data.gpax}}
       </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <ion-item *ngFor="let i of data.interests">
-        {{i}}
+      <ion-item>
+        Year:  {{data.year}}
 
+      </ion-item>
+      <ion-item>
+        Major:  {{data.major}}
       </ion-item>
     </ion-card-content>
 
