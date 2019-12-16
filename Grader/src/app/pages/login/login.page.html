@@ -135,6 +135,42 @@
       </ion-segment-button>
     </ion-segment>
 
+    <ion-list-header>Number of courses with credit 6 you have W</ion-list-header>
+
+
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)] = "withdrawn6">
+      <ion-segment-button  value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-list-header>Number of courses with credit 9 you have W</ion-list-header>
+
+
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)] = "withdrawn9">
+      <ion-segment-button  value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
 
   </div>
 
@@ -191,4 +227,8 @@
 <ion-button (click) = "getgrade(3)" expand = "block" >get grade</ion-button>-->
 
 </ion-content>
+
+<ion-button (click) = "supergetgrade()" expand = "block" >super duper woo hoo</ion-button>
+
+<ion-button (click) = "ss3()" expand = "block" >THISONE</ion-button>
 
