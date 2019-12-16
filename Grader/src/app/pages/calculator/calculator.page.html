@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title color = "danger"> Grade Calculator</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -16,19 +19,19 @@
   
   <ion-item>
       <ion-label position = "floating" >Enter your student ID</ion-label>
-      <ion-input type = "text" [(ngModel)] = "username" placeholder="Enter Input"></ion-input>
+      <ion-input clearInput type = "text" [(ngModel)] = "username" placeholder="Enter Input"></ion-input>
   </ion-item>
 
   <ion-item>
-      <ion-label position = "floating" >Desirable GPAX when graduated</ion-label>
-      <ion-input type = "number" min = "0" max = "4" [(ngModel)] = "gpax" placeholder="Enter GPAX"></ion-input>
+      <ion-label position = "floating" >Expected GPAX when graduated</ion-label>
+      <ion-input type = "number" min = "0" max = "4" [(ngModel)] = "gpaxDesired" placeholder="Enter GPAX"></ion-input>
   </ion-item>
 
   <ion-button (click) = "fetch()" expand = "block" 
-  fill = "outline" >Fetch</ion-button>
+  fill = "outline" ><ion-icon name="jet"></ion-icon>Fetch</ion-button>
 
   <ion-button (click) = "getdatafromid()" expand = "block" 
-  fill = "outline" [routerLink] = "fillall ? ['/calculated'] : []" routerDirection = 'forward'>Calculate</ion-button>
+  fill = "outline"><ion-icon name="calculator"></ion-icon>Calculate</ion-button>
 
 
 

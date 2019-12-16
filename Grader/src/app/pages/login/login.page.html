@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title size-lg = "12" color = "tertiary">Get started</ion-title>
+    <ion-title size-lg = "12" color = "Primary">Get started</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +16,7 @@
   
   <ion-item>
     <ion-label position = "floating" >Enter your student ID</ion-label>
-    <ion-input type = "text" [(ngModel)] = "username" placeholder="Enter Input"></ion-input>
+    <ion-input clearInput type = "text" [(ngModel)] = "username" placeholder="Enter Input"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -41,13 +44,103 @@
 
   </ion-item>
 
+  
   <div class="center" *ngIf="buttonClicked">
-    <ion-item>
+      <!-- <ion-item>
       <ion-label position = "floating" >Enter number of credit withdrawn</ion-label>
       <ion-input type = "number" min = "0" [(ngModel)] = "creditWithdrawn" 
       placeholder="Enter credits withdrawn"></ion-input>
-    </ion-item>
+    </ion-item> -->
+    
+    <ion-list-header>Number of courses with credit 1 you have W</ion-list-header>
+
+
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)] = "withdrawn1">
+      <ion-segment-button  value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+
+
+    <ion-list-header>Number of courses with credit 2 you have W</ion-list-header>
+
+
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)] = "withdrawn2">
+      <ion-segment-button  value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+
+  
+ 
+
+    <ion-list-header>Number of courses with credit 3 you have W</ion-list-header>
+
+
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)] = "withdrawn3">
+      <ion-segment-button  value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+
+  
+
+  
+
+    <ion-list-header>Number of courses with credit 4 you have W</ion-list-header>
+
+
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)] = "withdrawn4">
+      <ion-segment-button  value="0">
+        <ion-label>0</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="1">
+        <ion-label>1</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="2">
+        <ion-label>2</ion-label>
+      </ion-segment-button>
+      <ion-segment-button  value="3">
+        <ion-label>3</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+
   </div>
+
+
+
+
   <ion-item>
       
       <ion-label>Year</ion-label>
@@ -58,6 +151,17 @@
         <ion-select-option value="4th">Senior</ion-select-option>
       </ion-select>
   </ion-item>
+
+  <ion-item>
+      
+    <ion-label>Semester</ion-label>
+      <ion-select [(ngModel)] = "semester" placeholder="Select One">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+      </ion-select>
+
+  </ion-item>
+
 
   <ion-item>
       
@@ -73,21 +177,20 @@
 
   </ion-item>
 
-      
-
-
+ 
     </ion-card>
 
-    <ion-button (click) = "submit()" expand = "block" id = "btn-add">Submit</ion-button>
+    <ion-button (click) = "submit()" expand = "block" id = "btn-add"><ion-icon name="send"></ion-icon>Submit</ion-button>
 
-    <ion-button expand = 'block' routerLink="/" routerDirection = 'back'><ion-icon slot = "start" name = "home"></ion-icon>Home</ion-button> 
-</ion-content>
-<ion-button (click) = "getdatafromid()" expand = "block" >get data</ion-button>
+     <ion-button expand = 'block' routerLink="/" routerDirection = 'back'><ion-icon slot = "start" name = "home"></ion-icon>Home</ion-button> 
+  <!-- <ion-button (click) = "getdatafromid()" expand = "block" >get data</ion-button>
 <ion-button (click) = "add(3,49)" expand = "block" >add</ion-button>
 
 <ion-button (click) = "funcs(3,49)" expand = "block" >ffff</ion-button>
 
-<ion-button (click) = "getgrade(3)" expand = "block" >get grade</ion-button>
+<ion-button (click) = "getgrade(3)" expand = "block" >get grade</ion-button>-->
+
+</ion-content>
 
 <ion-button (click) = "supergetgrade()" expand = "block" >super duper woo hoo</ion-button>
 
