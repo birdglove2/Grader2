@@ -13,7 +13,8 @@ import * as firebase from 'firebase';
 export class LoginPage implements OnInit {
   static username: string;
   [x: string]: any;
-  
+
+  checker:boolean = false;
   buttonClicked: boolean = false; 
   gpax: number = 0
   credit: number = 0
@@ -28,13 +29,27 @@ export class LoginPage implements OnInit {
   withdrawn9
   creditWithdrawn
   semester
-
+  credit1
+  credit2
+  credit3
+  credit4
+  credit6
+  credit9
   j=3.0
   k=4.0
   constructor(
     public afstore: AngularFirestore,
     public alertController: AlertController
     ) { }
+
+    gotChar(eve) {
+      this.checker = eve.target.value > 0 && eve.target.value != null ? true : false ;
+    }
+   
+    gotChange(eve) {
+     console.log(eve.target.value);
+     this.checker = eve.target.value > 0 && eve.target.value != null ? true : false;
+    }
 
 
   async submit() {
@@ -48,16 +63,45 @@ export class LoginPage implements OnInit {
       return null;
     }
 
+    if(this.credit > 0) {
+      if(this.credit1 == null || this.credit2 == null || this.credit3 == null ||
+        this.credit4 == null || this.credit6 == null || this.credit9 == null) {
+      this.presentAlertVOID();
+      return null;
+      }
+
+      if(this.credit1 < 0 || this.credit2 < 0 || this.credit3 < 0 ||
+        this.credit4 < 0 || this.credit6 < 0 || this.credit9 < 0) {
+      this.presentAlertCredit();
+      return null;
+      }
+    } else {
+
+      this.presentAlertCredit();
+
+    }
+
+    if(this.credit != 1*this.credit1+2*this.credit2+3*this.credit3+4*this.credit4+6*this.credit6+
+      9*this.credit9) {
+        this.presentAlertCredit();
+        return null;
+
+      }
+
     if(this.username.length != 10) {
       this.presentAlertUsername();
       return null;
     }
-  
+    
+   
+
     if(this.withdrawn == "no") {
       this.withdrawn1 = 0;
       this.withdrawn2 = 0;
       this.withdrawn3 = 0;
       this.withdrawn4 = 0;
+      this.withdrawn6 = 0;
+      this.withdrawn9 = 0;
     } else {
 
       if(this.withdrawn1 == null || this.withdrawn2 == null || 
@@ -139,7 +183,13 @@ export class LoginPage implements OnInit {
       withdrawn9: this.withdrawn9,
       creditWithdrawn: (1*this.withdrawn1+2*this.withdrawn2+3*this.withdrawn3
                         +4*this.withdrawn4+6*this.withdrawn6+9*this.withdrawn9),
-      semester: this.semester
+      semester: this.semester,
+      credit1: this.credit1,
+      credit2: this.credit2,
+      credit3: this.credit3,
+      credit4: this.credit4,
+      credit6: this.credit6,
+      credit9: this.credit9
 
     
 
@@ -147,8 +197,8 @@ export class LoginPage implements OnInit {
     })
 
     const alert = await this.alertController.create({
-      header: 'Success',
-      subHeader: 'Subtitle',
+      header: 'Success!',
+      subHeader: '',
       message: "You have created the accout!" + " " + "Student ID: " 
       + this.username  + " " + "GPAX: " + this.gpax + " " + "Credits taken:  " 
       + " " + this.credit + " " + "Year: " + this.year + " " + "Major: " 
@@ -166,11 +216,25 @@ export class LoginPage implements OnInit {
     this.semester = null;
     this.credit = null;
     this.withdrawn1 = null;
+
     this.withdrawn2 = null;
     this.withdrawn3 = null;
     this.withdrawn4 = null;
     this.withdrawn6 = null;
     this.withdrawn9 = null;
+    this.credit1 = null;
+    this.credit2 = null;
+    this.credit3 = null;
+    this.credit4 = null;
+    this.credit6 = null;
+    this.credit9 = null;
+    
+
+
+
+  
+
+    
   
   }
 
@@ -562,7 +626,7 @@ export class LoginPage implements OnInit {
          if(key == ''+4.0) {
 
          
-         console.log("yes kuay")
+         console.log("yes sir")
          console.log(key)
 
          }

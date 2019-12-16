@@ -39,6 +39,9 @@ export class CalculatorPage implements OnInit {
     withdrawn6 = null
     withdrawn9 = null
 
+    
+
+
     semester = null
     creditWithdrawn = null
     gradelist =  [0.0, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0]
@@ -96,6 +99,19 @@ export class CalculatorPage implements OnInit {
           this.fillall = true;
           
 
+
+          const cw1 = this.withdrawn1 *1
+          const cw2 = this.withdrawn2 *2
+          const cw3 = this.withdrawn3 *3
+          const cw4 = this.withdrawn4 *4
+          const cw6 = this.withdrawn6 *6
+          const cw9 = this.withdrawn9 *9
+
+
+          const withdrawnlist = [cw1,cw2,cw3,cw4,cw6,cw9]
+
+
+
           if(doc.data().major == "ICE") {
             this.creditlist = this.creditlistICE
             this.totalcredit = this.creditICE
@@ -120,6 +136,14 @@ export class CalculatorPage implements OnInit {
             this.creditlist = this.creditlistAI
             this.totalcredit = this.creditAI
           }
+
+
+          for(let i=0;i<=5;i++){
+            this.creditlist[i] = this.creditlist[i] - withdrawnlist[i]
+          }
+          console.log('credit-withdrawn',this.creditlist)
+          console.log('withdrawnlist',withdrawnlist)
+
 
           var gpax = doc.data().gpax
           const credittaken = doc.data().credit
@@ -165,14 +189,16 @@ export class CalculatorPage implements OnInit {
 
     //new
 
+          
+
 
       
           const creditt = [1,2,3,4,6,9]
-          const numcredit = [5,4,28,0,1,1]
+          //const numcredit = [5,4,28,0,1,1]
+          const numcredit = this.creditlist
           const need = valueneed
-          var summ=0
-      
-      
+          
+
           var cc=0
           var countn=0
           var counts=0
@@ -187,6 +213,16 @@ export class CalculatorPage implements OnInit {
           else{
             var gradebound = finalbound -0.5
           }
+
+          const sum1 = numcredit[0]*gradebound
+          const sum2 = numcredit[1]*gradebound
+          const sum3 = numcredit[2]*gradebound
+          const sum4 = numcredit[3]*gradebound
+          const sum6 = numcredit[4]*gradebound
+          const sum9 = numcredit[5]*gradebound
+
+          var summ = sum1 + sum2 + sum3 + sum4 + sum6 + sum9
+          console.log('sumbound',summ)
       
       
           var countcredit1 = { 0.0 :0 , 1.0 :0 , 1.5 :0 , 2.0 :0 , 2.5 :0 , 3.0:0 , 3.5:0, 4.0:0}

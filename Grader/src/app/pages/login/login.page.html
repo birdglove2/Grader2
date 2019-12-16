@@ -25,9 +25,32 @@
   </ion-item>
 
   <ion-item>
-    <ion-label position = "floating" >Credit taken including W</ion-label>
-    <ion-input type = "number" min = "0" [(ngModel)] = "credit" placeholder="Enter credits"></ion-input>
+    <ion-label position = "floating" >Total credit taken(including W)</ion-label>
+    <ion-input (input)="gotChar($event)" type = "number" min = "0" [(ngModel)] = "credit" placeholder="Enter credits"></ion-input>
   </ion-item>
+
+
+  <div class="center" *ngIf="checker">
+  <ion-item>
+
+      <ion-label position = "floating" >Number of courses(credit 1) taken</ion-label>
+      <ion-input type = "number" min = "0" max = "10" [(ngModel)] = "credit1" placeholder="Enter credit"></ion-input>
+      <ion-label position = "floating" >Number of courses(credit 2) taken</ion-label>
+      <ion-input type = "number" min = "0" max = "10" [(ngModel)] = "credit2" placeholder="Enter credit"></ion-input>
+      <ion-label position = "floating" >Number of courses(credit 3) taken</ion-label>
+      <ion-input type = "number" min = "0" max = "45" [(ngModel)] = "credit3" placeholder="Enter credit"></ion-input>
+      <ion-label position = "floating" >Number of courses(credit 4) taken</ion-label>
+      <ion-input type = "number" min = "0" max = "15" [(ngModel)] = "credit4" placeholder="Enter credit"></ion-input>
+      <ion-label position = "floating" >Number of courses(credit 6) taken</ion-label>
+      <ion-input type = "number" min = "0" max = "5" [(ngModel)] = "credit6" placeholder="Enter credit"></ion-input>
+      <ion-label position = "floating" >Number of courses(credit 9) taken</ion-label>
+      <ion-input type = "number" min = "0" max = "5" [(ngModel)] = "credit9" placeholder="Enter credit"></ion-input>
+   
+
+  </ion-item>
+
+  </div>
+  
 
   <ion-list-header>Have you withdrawn any courses?</ion-list-header>
 

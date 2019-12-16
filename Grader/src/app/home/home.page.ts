@@ -12,6 +12,7 @@ import { Observable }     from 'rxjs/Observable';
 })
 export class HomePage {
   [x: string]: any;
+  
   userDoc: string = ""
   db
   firebase
@@ -23,6 +24,9 @@ export class HomePage {
     public afstore: AngularFirestore
 
   ) {}
+
+  
+
 
   async test() {
 
