@@ -110,6 +110,7 @@ export class CalculatorPage implements OnInit {
 
           this.fillall = true;
           
+          const credittakenlist = [this.credit1*1, this.credit2*2, this.credit3*3, this.credit4*4, this.credit6*6, this.credit9*9]
 
 
           const cw1 = this.withdrawn1 *1
@@ -125,8 +126,10 @@ export class CalculatorPage implements OnInit {
 
 
           if(doc.data().major == "ICE") {
+            console.log('ice done')
             this.creditlist = this.creditlistICE
             this.totalcredit = this.creditICE
+            console.log('ice',this.creditlist)
           }
           if(doc.data().major == "ADME") {
             this.creditlist = this.creditlistADME
@@ -149,12 +152,13 @@ export class CalculatorPage implements OnInit {
             this.totalcredit = this.creditAI
           }
 
-
+          console.log('before',this.creditlist)
           for(let i=0;i<=5;i++){
-            this.creditlist[i] = this.creditlist[i] - withdrawnlist[i]
+            this.creditlist[i] = this.creditlist[i] + withdrawnlist[i] - credittakenlist[i]
           }
-          console.log('credit-withdrawn',this.creditlist)
+          console.log('credit+withdrawn-credittaken',this.creditlist)
           console.log('withdrawnlist',withdrawnlist)
+          console.log('credittakenkist',credittakenlist)
 
 
           var gpax = doc.data().gpax
@@ -162,6 +166,7 @@ export class CalculatorPage implements OnInit {
           const creditWithdrawn = doc.data().creditWithdrawn
     
           var valueneed = (this.gpaxDesired * this.totalcredit)-(gpax*(credittaken-creditWithdrawn))
+          console.log('valueneed',valueneed)
           
 
           var sum =0.0
@@ -207,7 +212,15 @@ export class CalculatorPage implements OnInit {
       
           const creditt = [1,2,3,4,6,9]
           //const numcredit = [5,4,28,0,1,1]
-          const numcredit = this.creditlist
+          var numcredit = [0.0 , 0.0 , 0.0 , 0.0 , 0.0]
+          numcredit[0]= this.creditlist[0]/1
+          numcredit[1]= this.creditlist[1]/2
+          numcredit[2]= this.creditlist[2]/3
+          numcredit[3]= this.creditlist[3]/4
+          numcredit[4]= this.creditlist[4]/6
+          numcredit[5]= this.creditlist[5]/9
+          console.log('numcredit',numcredit)
+
           const need = valueneed
           
 
@@ -217,7 +230,7 @@ export class CalculatorPage implements OnInit {
           var pivot=0
           var time=1
       
-          
+          console.log('final bound',finalbound)
           var gradenow=0
           if (finalbound==0 || finalbound ==1){
             var gradebound =0
@@ -226,15 +239,23 @@ export class CalculatorPage implements OnInit {
             var gradebound = finalbound -0.5
           }
 
-          const sum1 = numcredit[0]*gradebound
-          const sum2 = numcredit[1]*gradebound
-          const sum3 = numcredit[2]*gradebound
-          const sum4 = numcredit[3]*gradebound
-          const sum6 = numcredit[4]*gradebound
-          const sum9 = numcredit[5]*gradebound
+          const sum1 = numcredit[0]*gradebound*1
+          const sum2 = numcredit[1]*gradebound*2
+          const sum3 = numcredit[2]*gradebound*3
+          const sum4 = numcredit[3]*gradebound*4
+          const sum6 = numcredit[4]*gradebound*6
+          const sum9 = numcredit[5]*gradebound*9
 
           var summ = sum1 + sum2 + sum3 + sum4 + sum6 + sum9
+          console.log('sum1',sum1)
+          console.log('sum2',sum2)
+          console.log('sum3',sum3)
+          console.log('sum4',sum4)
+          console.log('sum6',sum6)
+          console.log('sum9',sum9)
+          
           console.log('sumbound',summ)
+          console.log('gradebound',gradebound)
       
       
           var countcredit1 = { 0.0 :0 , 1.0 :0 , 1.5 :0 , 2.0 :0 , 2.5 :0 , 3.0:0 , 3.5:0, 4.0:0}
@@ -259,7 +280,7 @@ export class CalculatorPage implements OnInit {
               gradenow=gradebound+(0.5*time)
               time = time+1
             }
-      
+            if(gradenow!=4){
             if (cc == 0){ 
               for (let key in countcredit1) {
                 if(key == ''+gradenow && summ> need) {
@@ -290,6 +311,8 @@ export class CalculatorPage implements OnInit {
             if (cc ==3){
               for (let key in countcredit4) {
                 if(key == ''+gradenow && summ> need) {
+                  console.log('errorr')
+                  console.log('gradenow',gradenow)
                   counts+=1
                   countcredit4[gradenow]=counts
                   countcredit4[gradebound] -= counts
@@ -314,8 +337,8 @@ export class CalculatorPage implements OnInit {
                 }
               }
             }
-      
-            if (gradenow ==4.0){
+            }
+            else if (gradenow ==4.0){
               countn+=1
       
               if (cc ==0){
@@ -342,11 +365,12 @@ export class CalculatorPage implements OnInit {
                   }
                 }
               }
-              if (cc ==3){
+              if (cc ==3 && numcredit[3]!=0.0){
                 for (let key in countcredit4) {
                   if(key == ''+gradenow) {
                     countcredit4[gradenow]=countn
                     countcredit4[gradebound]=numcredit[3]-countn  
+                    console.log('error 22')
                   }
                 }
               }
@@ -378,7 +402,7 @@ export class CalculatorPage implements OnInit {
               cc+=1
             }
       
-            
+            //dict นับว่าในเครดิต มี A กี่ตัว B กี่ตัว ...
             if (summ>=need || cc >5) {
               console.log('this is grade')
               console.log('1',countcredit1)
@@ -391,26 +415,197 @@ export class CalculatorPage implements OnInit {
               break
             } 
           }
+      //list นับว่าในเครดิต มี A กี่ตัว B กี่ตัว ... convert from dict
+          var countgradeC1 = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+          var countgradeC2 = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+          var countgradeC3 = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+          var countgradeC4 = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+          var countgradeC6 = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+          var countgradeC9 = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+      
+          //Credit1
+          for (let key in countcredit1) {
+            if (parseInt(key)==0.0){
+              countgradeC1[0]= countcredit1[key]
+            }
+            if (parseInt(key)==1.0){
+              countgradeC1[1]= countcredit1[key]
+            }
+            if (parseInt(key)==1.5){
+              countgradeC1[2]= countcredit1[key]
+            }
+            if (parseInt(key)==2.0){
+              countgradeC1[3]= countcredit1[key]
+            }
+            if (parseInt(key)==2.5){
+              countgradeC1[4]= countcredit1[key]
+            }
+            if (parseInt(key)==3.0){
+              countgradeC1[5]= countcredit1[key]
+            }
+            if (parseInt(key)==3.5){
+              countgradeC1[6]= countcredit1[key]
+            }
+            if (parseInt(key)==4.0){
+              countgradeC1[7]= countcredit1[key]
+            }
+            
+          }
+      
+      
+          //Credit2
+          for (let key in countcredit2) {
+            if (parseInt(key)==0.0){
+              countgradeC2[0]= countcredit2[key]
+            }
+            if (parseInt(key)==1.0){
+              countgradeC2[1]= countcredit2[key]
+            }
+            if (parseInt(key)==1.5){
+              countgradeC2[2]= countcredit2[key]
+            }
+            if (parseInt(key)==2.0){
+              countgradeC2[3]= countcredit2[key]
+            }
+            if (parseInt(key)==2.5){
+              countgradeC2[4]= countcredit2[key]
+            }
+            if (parseInt(key)==3.0){
+              countgradeC2[5]= countcredit2[key]
+            }
+            if (parseInt(key)==3.5){
+              countgradeC2[6]= countcredit2[key]
+            }
+            if (parseInt(key)==4.0){
+              countgradeC2[7]= countcredit2[key]
+            }
+            
+          }
+      
+          //Credit3
+          for (let key in countcredit3) {
+            if (parseInt(key)==0.0){
+              countgradeC3[0]= countcredit3[key]
+            }
+            if (parseInt(key)==1.0){
+              countgradeC3[1]= countcredit3[key]
+            }
+            if (parseInt(key)==1.5){
+              countgradeC3[2]= countcredit3[key]
+            }
+            if (parseInt(key)==2.0){
+              countgradeC3[3]= countcredit3[key]
+            }
+            if (parseInt(key)==2.5){
+              countgradeC3[4]= countcredit3[key]
+            }
+            if (parseInt(key)==3.0){
+              countgradeC3[5]= countcredit3[key]
+            }
+            if (parseInt(key)==3.5){
+              countgradeC3[6]= countcredit3[key]
+            }
+            if (parseInt(key)==4.0){
+              countgradeC3[7]= countcredit3[key]
+            }
+            
+          }
+      
+          //Credit4
+          for (let key in countcredit4) {
+            if (parseInt(key)==0.0){
+              countgradeC4[0]= countcredit4[key]
+            }
+            if (parseInt(key)==1.0){
+              countgradeC4[1]= countcredit4[key]
+            }
+            if (parseInt(key)==1.5){
+              countgradeC4[2]= countcredit4[key]
+            }
+            if (parseInt(key)==2.0){
+              countgradeC4[3]= countcredit4[key]
+            }
+            if (parseInt(key)==2.5){
+              countgradeC4[4]= countcredit4[key]
+            }
+            if (parseInt(key)==3.0){
+              countgradeC4[5]= countcredit4[key]
+            }
+            if (parseInt(key)==3.5){
+              countgradeC4[6]= countcredit4[key]
+            }
+            if (parseInt(key)==4.0){
+              countgradeC4[7]= countcredit4[key]
+            }
+            
+          }
+      
+          //Credit6
+          for (let key in countcredit6) {
+            if (parseInt(key)==0.0){
+              countgradeC6[0]= countcredit6[key]
+            }
+            if (parseInt(key)==1.0){
+              countgradeC6[1]= countcredit6[key]
+            }
+            if (parseInt(key)==1.5){
+              countgradeC6[2]= countcredit6[key]
+            }
+            if (parseInt(key)==2.0){
+              countgradeC6[3]= countcredit6[key]
+            }
+            if (parseInt(key)==2.5){
+              countgradeC6[4]= countcredit6[key]
+            }
+            if (parseInt(key)==3.0){
+              countgradeC6[5]= countcredit6[key]
+            }
+            if (parseInt(key)==3.5){
+              countgradeC6[6]= countcredit6[key]
+            }
+            if (parseInt(key)==4.0){
+              countgradeC6[7]= countcredit6[key]
+            }
+            
+          }
+      
+          //Credit9
+          for (let key in countcredit9) {
+            if (parseInt(key)==0.0){
+              countgradeC9[0]= countcredit9[key]
+            }
+            if (parseInt(key)==1.0){
+              countgradeC9[1]= countcredit9[key]
+            }
+            if (parseInt(key)==1.5){
+              countgradeC9[2]= countcredit9[key]
+            }
+            if (parseInt(key)==2.0){
+              countgradeC9[3]= countcredit9[key]
+            }
+            if (parseInt(key)==2.5){
+              countgradeC9[4]= countcredit9[key]
+            }
+            if (parseInt(key)==3.0){
+              countgradeC9[5]= countcredit9[key]
+            }
+            if (parseInt(key)==3.5){
+              countgradeC9[6]= countcredit9[key]
+            }
+            if (parseInt(key)==4.0){
+              countgradeC9[7]= countcredit9[key]
+            }
+            
+          }
+          
+          console.log('listgrade1',countgradeC1)
+          console.log('listgrade2',countgradeC2)
+          console.log('listgrade3',countgradeC3)
+          console.log('listgrade4',countgradeC4)
+          console.log('listgrade6',countgradeC6)
+          console.log('listgrade9',countgradeC9)
+      
         
-
-
-
-
-
-
-
-
-      //new
-      
-      
-
-
-
-    console.log('least bound grade is ',this.gradelist[ggg])
-    console.log(sum)
-    console.log('done')
-    console.log(valueneed) 
-  
         } else {
           
           console.log("No such document!");
