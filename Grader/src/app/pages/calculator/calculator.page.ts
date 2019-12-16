@@ -180,13 +180,11 @@ export class CalculatorPage implements OnInit {
 
 
 
-
-  this.username = null;
-  this.gpaxDesired = null;
+  
   const alert = await this.alertController.create({
     header: 'Fetched',
     subHeader: '',
-    message: "Please click Calculate",
+    message: "Please  wait for 5 seconds and click Calculate",
     buttons: ['OK']
   });
 
@@ -194,6 +192,10 @@ export class CalculatorPage implements OnInit {
 
   
       
+
+ 
+
+
     }
 
     

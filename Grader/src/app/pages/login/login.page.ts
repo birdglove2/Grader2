@@ -158,6 +158,7 @@ export class LoginPage implements OnInit {
     this.major = null;
     this.year = null,
     this.semester = null;
+    this.credit = null;
     this.withdrawn1 = null;
     this.withdrawn2 = null;
     this.withdrawn3 = null;
