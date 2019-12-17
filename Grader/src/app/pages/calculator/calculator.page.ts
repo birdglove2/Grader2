@@ -174,6 +174,35 @@ export class CalculatorPage implements OnInit {
           var ccc=0
           var count=0
           var getout=0
+
+          var numcredit = [0.0 , 0.0 , 0.0 , 0.0 , 0.0]
+          numcredit[0]= this.creditlist[0]/1
+          numcredit[1]= this.creditlist[1]/2
+          numcredit[2]= this.creditlist[2]/3
+          numcredit[3]= this.creditlist[3]/4
+          numcredit[4]= this.creditlist[4]/6
+          numcredit[5]= this.creditlist[5]/9
+          console.log('numcredit',numcredit)
+
+          const maxsum1 = numcredit[0]*4.0*1
+          const maxsum2 = numcredit[1]*4.0*2
+          const maxsum3 = numcredit[2]*4.0*3
+          const maxsum4 = numcredit[3]*4.0*4
+          const maxsum6 = numcredit[4]*4.0*6
+          const maxsum9 = numcredit[5]*4.0*9
+
+          const maxvalue = maxsum1 + maxsum2 + maxsum3 + maxsum4 + maxsum6 +maxsum9
+          console.log('maxvalue',maxvalue)
+          console.log('gpax',gpax)
+          const leastgradeposs = (gpax*(credittaken-creditWithdrawn))/this.totalcredit
+          console.log('credit taken ',credittaken)
+          console.log('gpaxdesired',this.gpaxDesired)
+          console.log('credit WW',creditWithdrawn)
+          console.log(this.totalcredit)
+          console.log('least grade poss',leastgradeposs)
+
+    if(valueneed<=maxvalue && this.gpaxDesired >= leastgradeposs){
+
     while (getout != 1) {
         if (sum>= valueneed){
           var finalbound = this.gradelist[ggg]
@@ -201,7 +230,9 @@ export class CalculatorPage implements OnInit {
           }
         }      
       
-    }  
+      
+
+  }
 
 
     //new
@@ -210,16 +241,36 @@ export class CalculatorPage implements OnInit {
 
 
       
-          const creditt = [1,2,3,4,6,9]
+          var creditt = [1,2,3,4,6,9]
+          /*if (numcredit[0] == 0.0){
+            creditt[0]=0
+          }
+          if (numcredit[1] == 0.0){
+            creditt[1]=0
+          }
+          if (numcredit[2] == 0.0){
+            creditt[2]=0
+          }
+          if (numcredit[3] == 0.0){
+            creditt[3]=0
+          }
+          if (numcredit[4] == 0.0){
+            creditt[4]=0
+          }
+          if (numcredit[5] == 0.0){
+            creditt[5]=0
+          }
+          console.log('credit',creditt)*/
+
           //const numcredit = [5,4,28,0,1,1]
-          var numcredit = [0.0 , 0.0 , 0.0 , 0.0 , 0.0]
+          /*var numcredit = [0.0 , 0.0 , 0.0 , 0.0 , 0.0]
           numcredit[0]= this.creditlist[0]/1
           numcredit[1]= this.creditlist[1]/2
           numcredit[2]= this.creditlist[2]/3
           numcredit[3]= this.creditlist[3]/4
           numcredit[4]= this.creditlist[4]/6
           numcredit[5]= this.creditlist[5]/9
-          console.log('numcredit',numcredit)
+          console.log('numcredit',numcredit)*/
 
           const need = valueneed
           
@@ -234,6 +285,10 @@ export class CalculatorPage implements OnInit {
           var gradenow=0
           if (finalbound==0 || finalbound ==1){
             var gradebound =0
+          }
+          else if (finalbound ==4){
+            var gradebound = 3.5
+
           }
           else{
             var gradebound = finalbound -0.5
@@ -271,17 +326,42 @@ export class CalculatorPage implements OnInit {
           countcredit4[gradebound]= numcredit[3]
           countcredit6[gradebound]= numcredit[4]
           countcredit9[gradebound]= numcredit[5]
+
+          /*const maxsum1 = numcredit[0]*4.0*1
+          const maxsum2 = numcredit[1]*4.0*2
+          const maxsum3 = numcredit[2]*4.0*3
+          const maxsum4 = numcredit[3]*4.0*4
+          const maxsum6 = numcredit[4]*4.0*6
+          const maxsum9 = numcredit[5]*4.0*9
+
+          const maxvalue = maxsum1 + maxsum2 + maxsum3 + maxsum4 + maxsum6 +maxsum9
+          console.log('maxvalue',maxvalue)*/
       
           var sss=''
           while (sss!='done'){
-      
-            if (summ  < need) {
+
+            if (summ  < need && numcredit[cc]!=0.0) {
               summ = summ+ (0.5*creditt[cc])
+              console.log(creditt)
+              console.log(creditt[cc])
+              console.log('numcredit',numcredit)
               gradenow=gradebound+(0.5*time)
+              console.log('super error gradebound',gradebound)
+              console.log('super error gradenow',gradenow)
               time = time+1
-            }
-            if(gradenow!=4){
-            if (cc == 0){ 
+
+           // }else if (summ < need && numcredit[cc]==0.0){
+                //gradenow=gradebound+(0.5*time)
+                //console.log('super error gradebound 2 ',gradebound)
+               // console.log('super error gradenow 2 ',gradenow)
+                //summ = summ +0
+                //time = time +1
+             //   cc+=1
+                
+            }
+
+            //if(gradenow!=4){
+            if (cc == 0 && numcredit[0]!=0.0){ 
               for (let key in countcredit1) {
                 if(key == ''+gradenow && summ> need) {
                   counts+=1
@@ -290,7 +370,7 @@ export class CalculatorPage implements OnInit {
                 }
               }
             }
-            if (cc==1){
+            if (cc==1 && numcredit[1]!=0.0){
               for (let key in countcredit2) {
                 if(key == ''+gradenow && summ> need) {
                   counts+=1
@@ -299,7 +379,7 @@ export class CalculatorPage implements OnInit {
                 }
               } 
             }
-            if (cc==2){
+            if (cc==2 && numcredit[2]!=0.0){
               for (let key in countcredit3) {
                 if(key == ''+gradenow && summ> need) {
                   counts+=1
@@ -308,7 +388,7 @@ export class CalculatorPage implements OnInit {
                 }
               }
             }
-            if (cc ==3){
+            if (cc ==3 && numcredit[3]!=0.0){
               for (let key in countcredit4) {
                 if(key == ''+gradenow && summ> need) {
                   console.log('errorr')
@@ -319,7 +399,7 @@ export class CalculatorPage implements OnInit {
                 }
               }
             }
-            if (cc ==4){
+            if (cc ==4 && numcredit[4]!=0.0){
               for (let key in countcredit6) {
                 if(key == ''+gradenow && summ> need) {
                   counts+=1
@@ -328,7 +408,7 @@ export class CalculatorPage implements OnInit {
                 }
               }  
             }
-            if (cc ==5){
+            if (cc ==5 && numcredit[5]!=0.0 ){
               for (let key in countcredit9) {
                 if(key == ''+gradenow && summ> need) {
                   counts+=1
@@ -337,8 +417,8 @@ export class CalculatorPage implements OnInit {
                 }
               }
             }
-            }
-            else if (gradenow ==4.0){
+            //}
+            if (gradenow ==4.0){
               countn+=1
       
               if (cc ==0){
@@ -349,7 +429,7 @@ export class CalculatorPage implements OnInit {
                   }
                 }
               }
-              if (cc==1){
+              if (cc==1 && numcredit[1]!=0.0){
                 for (let key in countcredit2) {
                   if(key == ''+gradenow) {
                     countcredit2[gradenow]=countn
@@ -357,7 +437,7 @@ export class CalculatorPage implements OnInit {
                   }
                 }
               }
-              if (cc ==2){
+              if (cc ==2 && numcredit[2]!=0.0){
                 for (let key in countcredit3) {
                   if(key ==  ''+ gradenow ) {
                     countcredit3[gradenow]=countn
@@ -374,21 +454,25 @@ export class CalculatorPage implements OnInit {
                   }
                 }
               }
-      
-              if (cc ==4){
+              console.log('cc now =',cc)
+              console.log(summ)
+              if (cc ==4 && numcredit[4]!=0.0){
+                console.log('game')
                 for (let key in countcredit6) {
                   if(key == ''+gradenow) {
                     countcredit6[gradenow]=countn
                     countcredit6[gradebound]=numcredit[4]-countn
+                    console.log('error 6')
                   }
                 }
               }
       
-              if (cc ==5){
+              if (cc ==5 && numcredit[5]!=0.0){
                 for (let key in countcredit9) {
                   if(key == ''+gradenow ) {
                     countcredit9[gradenow]=countn          
                     countcredit9[gradebound]=numcredit[5]-countn     
+                    console.log('error 7')
                   }
                 }
               }  
@@ -396,7 +480,7 @@ export class CalculatorPage implements OnInit {
               time=1
             }
       
-            if (countn == numcredit[pivot]){
+            if (countn == numcredit[pivot] || numcredit[cc]==0.0){
               pivot+=1
               countn=0
               cc+=1
@@ -415,6 +499,7 @@ export class CalculatorPage implements OnInit {
               break
             } 
           }
+
       //list นับว่าในเครดิต มี A กี่ตัว B กี่ตัว ... convert from dict
           var countgradeC1 = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
           var countgradeC2 = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
@@ -604,12 +689,15 @@ export class CalculatorPage implements OnInit {
           console.log('listgrade4',countgradeC4)
           console.log('listgrade6',countgradeC6)
           console.log('listgrade9',countgradeC9)
+
       
+    }else{
+      console.log('This desired grade is not possible !!')
+    }
         
-        } else {
-          
-          console.log("No such document!");
-          this.presentAlertUsername();
+    } else { 
+        console.log("No such document!");
+        this.presentAlertUsername();
           
 
     }
