@@ -259,7 +259,7 @@ export class LoginPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Error',
       subHeader: '',
-      message: "Exceed maximum credits for your major!",
+      message: "Credits is not match for your major!",
       buttons: ['OK']
     });
 
