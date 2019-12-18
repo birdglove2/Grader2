@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color = "dark">
-    <ion-title>calculated</ion-title>
+    <ion-title>Calculated</ion-title>
     
     
   </ion-toolbar>
@@ -39,7 +39,9 @@
       <ion-item>
         Credits withdrawn: {{data.creditWithdrawn}}
       </ion-item>
-      
+      <ion-item>
+        Credits left: {{creditleft}}
+      </ion-item>
 
 
     </ion-card-content>
@@ -52,9 +54,9 @@
       <ion-item>
         Expected GPAX: {{data.gpaxDesired}}
       </ion-item>
-      <ion-label>
+      <ion-item>
         In order to get the desired GPAX you need:
-      </ion-label>
+      </ion-item>
       
       
     </ion-card-content>
@@ -63,31 +65,48 @@
 
 
 <ion-card *ngIf = 'data.gradecredit1'>
-  For credit 1:
-
+    <ion-item>
+  For credit 1: 
+</ion-item>
   <ion-card *ngIf = 'data.gradecredit1.a1'>
-    Number of A: {{data.gradecredit1.a1}}
+      <ion-item>
+    Number of courses with A: {{data.gradecredit1.a1}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit1.bp1'>
-    Number of B+: {{data.gradecredit1.bp1}}
+      <ion-item>
+    Number of courses with B+: {{data.gradecredit1.bp1}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit1.b1'>
-    Number of B: {{data.gradecredit1.b1}}
+      <ion-item>
+    Number of courses with B: {{data.gradecredit1.b1}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit1.cp1'>
-    Number of C+: {{data.gradecredit1.cp1}}
+      <ion-item>
+    Number of courses with C+: {{data.gradecredit1.cp1}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit1.c1'>
-    Number of C: {{data.gradecredit1.c1}}
+      <ion-item>
+    Number of courses with C: {{data.gradecredit1.c1}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit1.dp1'>
-    Number of D+: {{data.gradecredit1.dp1}}
+      <ion-item>
+    Number of courses with D+: {{data.gradecredit1.dp1}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit1.d1'>
-    Number of D: {{data.gradecredit1.d1}}
+      <ion-item>
+    Number of courses with D: {{data.gradecredit1.d1}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit1.f1'>
-    Number of F: {{data.gradecredit1.f1}}
+      <ion-item>
+    Number of courses with F: {{data.gradecredit1.f1}}
+      </ion-item>
   </ion-card>
 
 </ion-card>
@@ -96,148 +115,234 @@
 
   For credit 2:
   <ion-card *ngIf = 'data.gradecredit2.a2'>
-    Number of A: {{data.gradecredit2.a2}}
+      <ion-item>
+    Number of courses with A: {{data.gradecredit2.a2}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit2.bp2'>
-    Number of B+: {{data.gradecredit2.bp2}}
+      <ion-item>
+    Number of courses with B+: {{data.gradecredit2.bp2}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit2.b2'>
-    Number of B: {{data.gradecredit2.b2}}
+      <ion-item>
+    Number of courses with B: {{data.gradecredit2.b2}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit2.cp2'>
-    Number of C+: {{data.gradecredit2.cp2}}
+      <ion-item>
+    Number of courses with C+: {{data.gradecredit2.cp2}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit2.c2'>
-    Number of C: {{data.gradecredit2.c2}}
+      <ion-item>
+    Number of courses with C: {{data.gradecredit2.c2}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit2.dp2'>
-    Number of D+: {{data.gradecredit2.dp2}}
+      <ion-item>
+    Number of courses with D+: {{data.gradecredit2.dp2}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit2.d2'>
-    Number of D: {{data.gradecredit2.d2}}
+      <ion-item>
+    Number of courses with D: {{data.gradecredit2.d2}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit2.f2'>
-    Number of F: {{data.gradecredit2.f2}}
+      <ion-item>
+    Number of courses with F: {{data.gradecredit2.f2}}
+      </ion-item>
   </ion-card>
   
 </ion-card>
 
 <ion-card *ngIf = 'data.gradecredit3'>
+    <ion-item>
 
   For credit 3:
+    </ion-item>
   <ion-card *ngIf = 'data.gradecredit3.a3'>
-    Number of A: {{data.gradecredit3.a3}}
+      <ion-item>
+    Number of courses with A: {{data.gradecredit3.a3}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit3.bp3'>
-    Number of B+: {{data.gradecredit3.bp3}}
+      <ion-item>
+    Number of courses with B+: {{data.gradecredit3.bp3}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit3.b3'>
-    Number of B: {{data.gradecredit3.b3}}
+      <ion-item>
+    Number of courses with B: {{data.gradecredit3.b3}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit3.cp3'>
-    Number of C+: {{data.gradecredit3.cp3}}
+      <ion-item>
+    Number of courses with C+: {{data.gradecredit3.cp3}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit3.c3'>
-    Number of C: {{data.gradecredit3.c3}}
+      <ion-item>
+    Number of courses with C: {{data.gradecredit3.c3}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit3.dp3'>
-    Number of D+: {{data.gradecredit3.dp3}}
+      <ion-item>
+    Number of courses with D+: {{data.gradecredit3.dp3}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit3.d3'>
-    Number of D: {{data.gradecredit3.d3}}
+      <ion-item>
+    Number of courses with D: {{data.gradecredit3.d3}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit3.f3'>
-    Number of F: {{data.gradecredit3.f3}}
+      <ion-item>
+    Number of courses with F: {{data.gradecredit3.f3}}
+      </ion-item>
   </ion-card>
   
 </ion-card>
 
 <ion-card *ngIf = 'data.gradecredit4'>
+    <ion-item>
 
   For credit 4:
+    </ion-item>
   <ion-card *ngIf = 'data.gradecredit4.a4'>
-    Number of A: {{data.gradecredit4.a4}}
+      <ion-item>
+    Number of courses with A: {{data.gradecredit4.a4}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit4.bp4'>
-    Number of B+: {{data.gradecredit4.bp4}}
+      <ion-item>
+    Number of courses with B+: {{data.gradecredit4.bp4}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit4.b4'>
-    Number of B: {{data.gradecredit4.b4}}
+      <ion-item>
+    Number of courses with B: {{data.gradecredit4.b4}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit4.cp4'>
-    Number of C+: {{data.gradecredit4.cp4}}
+      <ion-item>
+    Number of courses with C+: {{data.gradecredit4.cp4}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit4.c4'>
-    Number of C: {{data.gradecredit4.c4}}
+      <ion-item>
+    Number of courses with C: {{data.gradecredit4.c4}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit4.dp4'>
-    Number of D+: {{data.gradecredit4.dp4}}
+      <ion-item>
+    Number of courses with D+: {{data.gradecredit4.dp4}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit4.d4'>
-    Number of D: {{data.gradecredit4.d4}}
+      <ion-item>
+    Number of courses with D: {{data.gradecredit4.d4}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit4.f4'>
-    Number of F: {{data.gradecredit4.f4}}
+      <ion-item>
+    Number of courses with F: {{data.gradecredit4.f4}}
+      </ion-item>
   </ion-card>
   
 </ion-card>
 
 <ion-card *ngIf = 'data.gradecredit6'>
-
+    <ion-item>
   For credit 6:
+    </ion-item>
   <ion-card *ngIf = 'data.gradecredit6.a6'>
-    Number of A: {{data.gradecredit6.a6}}
+      <ion-item>
+    Number of courses with A: {{data.gradecredit6.a6}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit6.bp6'>
-    Number of B+: {{data.gradecredit6.bp6}}
+      <ion-item>
+    Number of courses with B+: {{data.gradecredit6.bp6}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit6.b6'>
-    Number of B: {{data.gradecredit6.b6}}
+      <ion-item>
+    Number of courses with B: {{data.gradecredit6.b6}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit6.cp6'>
-    Number of C+: {{data.gradecredit6.cp6}}
+      <ion-item>
+    Number of courses with C+: {{data.gradecredit6.cp6}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit6.c6'>
-    Number of C: {{data.gradecredit6.c6}}
+      <ion-item>
+    Number of courses with C: {{data.gradecredit6.c6}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit6.dp6'>
-    Number of D+: {{data.gradecredit6.dp6}}
+      <ion-item>
+    Number of courses with D+: {{data.gradecredit6.dp6}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit6.d6'>
-    Number of D: {{data.gradecredit6.d6}}
+      <ion-item>
+    Number of courses with D: {{data.gradecredit6.d6}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit6.f6'>
-    Number of F: {{data.gradecredit6.f6}}
+      <ion-item>
+    Number of courses with F: {{data.gradecredit6.f6}}
+      </ion-item>
   </ion-card>
   
 </ion-card>
 
 <ion-card *ngIf = 'data.gradecredit9'>
-
+    <ion-item>
   For credit 9:
+    </ion-item>
   <ion-card *ngIf = 'data.gradecredit9.a9'>
-    Number of A: {{data.gradecredit9.a9}}
+      <ion-item>
+    Number of courses with A: {{data.gradecredit9.a9}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit9.bp9'>
-    Number of B+: {{data.gradecredit9.bp9}}
+      <ion-item>
+    Number of courses with B+: {{data.gradecredit9.bp9}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit9.b9'>
-    Number of B: {{data.gradecredit9.b9}}
+      <ion-item>
+    Number of courses with B: {{data.gradecredit9.b9}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit9.cp9'>
-    Number of C+: {{data.gradecredit9.cp9}}
+      <ion-item>
+    Number of courses with C+: {{data.gradecredit9.cp9}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit9.c9'>
-    Number of C: {{data.gradecredit9.c9}}
+      <ion-item>
+    Number of courses with C: {{data.gradecredit9.c9}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit9.dp9'>
-    Number of D+: {{data.gradecredit9.dp9}}
+      <ion-item>
+    Number of courses with D+: {{data.gradecredit9.dp9}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit9.d9'>
-    Number of D: {{data.gradecredit9.d9}}
+      <ion-item>
+    Number of courses with D: {{data.gradecredit9.d9}}
+      </ion-item>
   </ion-card>
   <ion-card *ngIf = 'data.gradecredit9.f9'>
-    Number of F: {{data.gradecredit9.f9}}
+      <ion-item>
+    Number of courses with F: {{data.gradecredit9.f9}}
+      </ion-item>
   </ion-card>
   
 </ion-card>

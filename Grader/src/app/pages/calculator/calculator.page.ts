@@ -137,7 +137,12 @@ export class CalculatorPage implements OnInit {
     creditAI = 135
     creditlist
     totalcredit
-
+    creditlist0
+    creditlist1
+    creditlist2
+    creditlist3
+    creditlist4
+    creditlist5
     
    
 
@@ -226,6 +231,7 @@ export class CalculatorPage implements OnInit {
           //console.log('before',this.creditlist)
           for(let i=0;i<=5;i++){
             this.creditlist[i] = this.creditlist[i] + withdrawnlist[i] - credittakenlist[i]
+            
           }
           //console.log('credit+withdrawn-credittaken',this.creditlist)
           //console.log('withdrawnlist',withdrawnlist)
@@ -1119,6 +1125,7 @@ export class CalculatorPage implements OnInit {
     major: this.major,
     withdrawn: this.withdrawn,
     creditWithdrawn: this.creditWithdrawn,
+    totalcredit: this.totalcredit,
     withdrawn1: this.withdrawn1,
     withdrawn2: this.withdrawn2,
     withdrawn3: this.withdrawn3,

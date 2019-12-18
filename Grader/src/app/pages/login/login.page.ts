@@ -52,6 +52,11 @@ export class LoginPage implements OnInit {
     }
 
 
+  async openreg() {
+    window.open("https://www2.reg.chula.ac.th",'_system', 'location=yes');
+
+
+  }
   async submit() {
 
    
