@@ -21,12 +21,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/calculator/calculator.module').then( m => m.CalculatorPageModule)
   },
   {
-    path: 'todo',
-    loadChildren: () => import('./pages/todo/todo.module').then( m => m.TodoPageModule)
-  },
-  {
     path: 'calculated',
     loadChildren: () => import('./pages/calculated/calculated.module').then( m => m.CalculatedPageModule)
+  },
+  {
+    path: 'information',
+    loadChildren: () => import('./pages/information/information.module').then( m => m.InformationPageModule)
   },
 ];
 

@@ -6,9 +6,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase';
 import { LoginPage } from '../login/login.page';
 
-import { NavController } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+import { CalculatedPage } from '../calculated/calculated.page';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 
 @Component({
@@ -23,7 +25,8 @@ export class CalculatorPage implements OnInit {
 
   constructor(public afstore: AngularFirestore,
     public alertController: AlertController,
-    private router : Router) { }
+    private router : Router //, public navCtrl: NavController, public navParam: NavParams
+    ) { }
 
     user
     username
@@ -966,6 +969,9 @@ export class CalculatorPage implements OnInit {
           const maxgradeposs = ((gpax*(credittaken-creditWithdrawn))+maxvalue) /this.totalcredit
           console.log('max grade possible = ',maxgradeposs)
           console.log('least grade poss = ',leastgradeposs)
+
+          //this.navCtrl.push(CalculatedPage, {leastgradeposs:leastgradeposs});
+          //this.navCtrl.push(CalculatedPage, {maxgradeposs:maxgradeposs});
         }
       
     
@@ -1067,6 +1073,8 @@ export class CalculatorPage implements OnInit {
     });
 
     await alert.present();
+
+
   }
   
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { ActivatedRoute, Router} from '@angular/router';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 @Component({
   selector: 'app-calculated',
@@ -13,7 +15,9 @@ export class CalculatedPage implements OnInit {
   passedgpax = null;
   passedusername = "";
   data: any;
-  constructor(private platform: Platform, private activatedRoute: ActivatedRoute, private router: Router) { 
+ // maxgrade: any;
+  //mingrade: any;
+  constructor(private platform: Platform, private activatedRoute: ActivatedRoute, private router: Router, public navCtrl: NavController, public navParams: NavParams) { 
     this.homepage =  1000; 
     this.activatedRoute.queryParams.subscribe(params => {
       console.log('params: ',params);
@@ -21,6 +25,8 @@ export class CalculatedPage implements OnInit {
         this.data = JSON.parse(params.special);
       }
     })
+   // this.maxgrade = navParams.get('maxgradeposs');
+    //this.mingrade = navParams.get('leastgradeposs');
   }
 
   ngOnInit() {
