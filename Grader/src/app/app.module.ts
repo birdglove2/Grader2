@@ -13,6 +13,10 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { firebaseConfig } from './credentials';
 
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { Router, NavigationExtras } from '@angular/router';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

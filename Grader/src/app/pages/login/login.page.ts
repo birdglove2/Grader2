@@ -294,6 +294,17 @@ export class LoginPage implements OnInit {
   }
 
 
+  async onButtonClickYes() {
+    
+    this.buttonClicked = true;
+    
+  }
+  async onButtonClickNo() {
+    
+    this.buttonClicked = false;
+    
+  }
+  
 }
 
   

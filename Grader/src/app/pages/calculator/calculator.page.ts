@@ -25,8 +25,8 @@ export class CalculatorPage implements OnInit {
 
   constructor(public afstore: AngularFirestore,
     public alertController: AlertController,
-    private router : Router //, public navCtrl: NavController, public navParam: NavParams
-    ) { }
+    private router : Router) //, public navCtrl: NavController, public navParam: NavParams
+     { }
 
     user
     username
@@ -48,6 +48,29 @@ export class CalculatorPage implements OnInit {
     credit4
     credit6
     credit9
+    maxgradeposs
+    leastgradeposs
+    gradecredit1
+    gradecredit2
+    gradecredit3
+    gradecredit4
+    gradecredit6
+    gradecredit9
+    leftcredit1
+    leftcredit2
+    leftcredit3
+    leftcredit4
+    leftcredit6
+    leftcredit9
+    f1
+    d1
+    dp1
+    c1
+    cp1
+    b1
+    bp1
+    a1
+
     
 
 
@@ -195,13 +218,13 @@ export class CalculatorPage implements OnInit {
 
           const maxvalue = maxsum1 + maxsum2 + maxsum3 + maxsum4 + maxsum6 +maxsum9
 
-          const leastgradeposs = (gpax*(credittaken-creditWithdrawn))/this.totalcredit
-          const maxgradeposs = ((gpax*(credittaken-creditWithdrawn))+maxvalue) /this.totalcredit
-          console.log('max grade possible = ',maxgradeposs)
-          console.log('min grade poss = ',leastgradeposs)
+          this.leastgradeposs = (gpax*(credittaken-creditWithdrawn))/this.totalcredit
+          this.maxgradeposs = ((gpax*(credittaken-creditWithdrawn))+maxvalue) /this.totalcredit
+          console.log('max grade possible = ', this.maxgradeposs)
+          console.log('min grade poss = ',this.leastgradeposs)
           
 
-    if(valueneed<=maxvalue && this.gpaxDesired >= leastgradeposs){
+    if(valueneed<=maxvalue && this.gpaxDesired >= this.leastgradeposs){
 
     while (getout != 1) {
         if (sum>= valueneed){
@@ -641,27 +664,35 @@ export class CalculatorPage implements OnInit {
         if (countgradeC1[e] != 0){
           if (e==0){
             console.log('F : ',countgradeC1[e])
+            this.f1 = countgradeC1[e]
           }
           if (e==1){
             console.log('D : ',countgradeC1[e])
+            this.d1 = countgradeC1[e]
           }
           if (e==2){
             console.log('D+ : ',countgradeC1[e])
+            this.dp1 = countgradeC1[e]
           }
           if (e==3){
             console.log('C : ',countgradeC1[e])
+            this.c1 = countgradeC1[e]
           }
           if (e==4){
             console.log('C+ : ',countgradeC1[e])
+            this.cp1 = countgradeC1[e]
           }
           if (e==5){
             console.log('B : ',countgradeC1[e])
+            this.b1 = countgradeC1[e]
           }
           if (e==6){
             console.log('B+ : ',countgradeC1[e])
+            this.bp1 = countgradeC1[e]
           }
           if (e==7){
             console.log('A : ',countgradeC1[e])
+            this.a1 = countgradeC1[e]
           }
         }
       }
@@ -897,6 +928,7 @@ export class CalculatorPage implements OnInit {
           this.credit4 = doc.data().credit4
           this.credit6 = doc.data().credit6
           this.credit9 = doc.data().credit9
+          
 
           this.fillall = true;
           
@@ -965,10 +997,10 @@ export class CalculatorPage implements OnInit {
 
           const maxvalue = maxsum1 + maxsum2 + maxsum3 + maxsum4 + maxsum6 +maxsum9
 
-          const leastgradeposs = (gpax*(credittaken-creditWithdrawn))/this.totalcredit
-          const maxgradeposs = ((gpax*(credittaken-creditWithdrawn))+maxvalue) /this.totalcredit
-          console.log('max grade possible = ',maxgradeposs)
-          console.log('least grade poss = ',leastgradeposs)
+          this.leastgradeposs = (gpax*(credittaken-creditWithdrawn))/this.totalcredit
+          this.maxgradeposs = ((gpax*(credittaken-creditWithdrawn))+maxvalue) /this.totalcredit
+          console.log('max grade possible = ',this.maxgradeposs)
+          console.log('least grade poss = ',this.leastgradeposs)
 
           //this.navCtrl.push(CalculatedPage, {leastgradeposs:leastgradeposs});
           //this.navCtrl.push(CalculatedPage, {maxgradeposs:maxgradeposs});
@@ -1013,8 +1045,14 @@ export class CalculatorPage implements OnInit {
     credit4: this.credit4,
     credit6: this.credit6,
     credit9: this.credit9,
-    semester: this.semester
-  
+    semester: this.semester,
+    maxgrade: this.maxgradeposs,
+    mingrade: this.leastgradeposs,
+    gradecredit1: {'f1':this.f1,'d1':this.d1,'dp1':this.dp1,'c1':this.c1,'cp1':this.cp1,
+                  'b1':this.b1,'bp1':this.bp1,'a1':this.a1},
+    gradecredit2: []
+
+
   }
     
 

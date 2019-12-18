@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class ='padding'>
 
   <ion-card *ngIf = "data">
 
@@ -63,13 +63,15 @@
 
   </ion-card>
 
-  <ion-card>
+  <ion-card *ngIf = 'data.gradecredit1.a1'>
     <ion-card-content>
       <ion-item>
         Expected GPAX: {{data.gpaxDesired}}
-        {{ data.max }}
-        {{ maxgrade}}
-        {{ mingrade }}
+        In order to get the desired GPAX you need:
+        For credit 1: {{data.gradecredit1.a1}}
+        {{data.gradecredit1.f1}}
+        {{data.gradecredit1.c1}}
+      
       </ion-item>
       
       

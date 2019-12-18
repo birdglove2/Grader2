@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { ActivatedRoute, Router} from '@angular/router';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { CalculatorPage } from '../calculator/calculator.page';
 
 @Component({
   selector: 'app-calculated',
@@ -17,7 +17,7 @@ export class CalculatedPage implements OnInit {
   data: any;
  // maxgrade: any;
   //mingrade: any;
-  constructor(private platform: Platform, private activatedRoute: ActivatedRoute, private router: Router, public navCtrl: NavController, public navParams: NavParams) { 
+  constructor(private platform: Platform, private activatedRoute: ActivatedRoute, private router: Router) { 
     this.homepage =  1000; 
     this.activatedRoute.queryParams.subscribe(params => {
       console.log('params: ',params);
