@@ -1051,7 +1051,7 @@ export class CalculatorPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Error',
       subHeader: '',
-      message: "Please fill in all the information and click fetch",
+      message: "Please fill in all the information and click fetch first",
       buttons: ['OK']
     });
 
@@ -1070,9 +1070,7 @@ export class CalculatorPage implements OnInit {
   }
   
 
-  async test(){
-    const adict = { 0: 0, 1: 0, 2: 0, 3: 14, 4: 14, "1.5": 0, "2.5": 0, "3.5": 0 }
-   }
+
 }
 
  
