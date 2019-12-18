@@ -39,23 +39,7 @@
       <ion-item>
         Credits withdrawn: {{data.creditWithdrawn}}
       </ion-item>
-      <ion-item>
-        Credits withdrawn1: {{data.withdrawn1}}
-        Credits withdrawn2: {{data.withdrawn2}}
-        Credits withdrawn3: {{data.withdrawn3}}
-        Credits withdrawn4: {{data.withdrawn4}}
-        Credits withdrawn6: {{data.withdrawn6}}
-        Credits withdrawn9: {{data.withdrawn9}}
-      </ion-item>
-
-      <ion-item>
-        Credit1 taken: {{data.credit1}}
-        Credit2 taken: {{data.credit2}}
-        Credit3 taken: {{data.credit3}}
-        Credit4 taken: {{data.credit4}}
-        Credit6 taken: {{data.credit6}}
-        Credit9 taken: {{data.credit9}}
-      </ion-item>
+      
 
 
     </ion-card-content>
@@ -67,12 +51,10 @@
     <ion-card-content>
       <ion-item>
         Expected GPAX: {{data.gpaxDesired}}
-        In order to get the desired GPAX you need:
-        For credit 1: {{data.gradecredit1.a1}}
-        {{data.gradecredit1.f1}}
-        {{data.gradecredit1.c1}}
-      
       </ion-item>
+      <ion-label>
+        In order to get the desired GPAX you need:
+      </ion-label>
       
       
     </ion-card-content>
@@ -80,9 +62,190 @@
 
 
 
+<ion-card *ngIf = 'data.gradecredit1'>
+  For credit 1:
+
+  <ion-card *ngIf = 'data.gradecredit1.a1'>
+    Number of A: {{data.gradecredit1.a1}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit1.bp1'>
+    Number of B+: {{data.gradecredit1.bp1}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit1.b1'>
+    Number of B: {{data.gradecredit1.b1}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit1.cp1'>
+    Number of C+: {{data.gradecredit1.cp1}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit1.c1'>
+    Number of C: {{data.gradecredit1.c1}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit1.dp1'>
+    Number of D+: {{data.gradecredit1.dp1}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit1.d1'>
+    Number of D: {{data.gradecredit1.d1}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit1.f1'>
+    Number of F: {{data.gradecredit1.f1}}
+  </ion-card>
+
+</ion-card>
+
+<ion-card *ngIf = 'data.gradecredit2'>
+
+  For credit 2:
+  <ion-card *ngIf = 'data.gradecredit2.a2'>
+    Number of A: {{data.gradecredit2.a2}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit2.bp2'>
+    Number of B+: {{data.gradecredit2.bp2}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit2.b2'>
+    Number of B: {{data.gradecredit2.b2}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit2.cp2'>
+    Number of C+: {{data.gradecredit2.cp2}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit2.c2'>
+    Number of C: {{data.gradecredit2.c2}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit2.dp2'>
+    Number of D+: {{data.gradecredit2.dp2}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit2.d2'>
+    Number of D: {{data.gradecredit2.d2}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit2.f2'>
+    Number of F: {{data.gradecredit2.f2}}
+  </ion-card>
+  
+</ion-card>
+
+<ion-card *ngIf = 'data.gradecredit3'>
+
+  For credit 3:
+  <ion-card *ngIf = 'data.gradecredit3.a3'>
+    Number of A: {{data.gradecredit3.a3}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit3.bp3'>
+    Number of B+: {{data.gradecredit3.bp3}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit3.b3'>
+    Number of B: {{data.gradecredit3.b3}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit3.cp3'>
+    Number of C+: {{data.gradecredit3.cp3}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit3.c3'>
+    Number of C: {{data.gradecredit3.c3}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit3.dp3'>
+    Number of D+: {{data.gradecredit3.dp3}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit3.d3'>
+    Number of D: {{data.gradecredit3.d3}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit3.f3'>
+    Number of F: {{data.gradecredit3.f3}}
+  </ion-card>
+  
+</ion-card>
+
+<ion-card *ngIf = 'data.gradecredit4'>
+
+  For credit 4:
+  <ion-card *ngIf = 'data.gradecredit4.a4'>
+    Number of A: {{data.gradecredit4.a4}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit4.bp4'>
+    Number of B+: {{data.gradecredit4.bp4}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit4.b4'>
+    Number of B: {{data.gradecredit4.b4}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit4.cp4'>
+    Number of C+: {{data.gradecredit4.cp4}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit4.c4'>
+    Number of C: {{data.gradecredit4.c4}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit4.dp4'>
+    Number of D+: {{data.gradecredit4.dp4}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit4.d4'>
+    Number of D: {{data.gradecredit4.d4}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit4.f4'>
+    Number of F: {{data.gradecredit4.f4}}
+  </ion-card>
+  
+</ion-card>
+
+<ion-card *ngIf = 'data.gradecredit6'>
+
+  For credit 6:
+  <ion-card *ngIf = 'data.gradecredit6.a6'>
+    Number of A: {{data.gradecredit6.a6}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit6.bp6'>
+    Number of B+: {{data.gradecredit6.bp6}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit6.b6'>
+    Number of B: {{data.gradecredit6.b6}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit6.cp6'>
+    Number of C+: {{data.gradecredit6.cp6}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit6.c6'>
+    Number of C: {{data.gradecredit6.c6}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit6.dp6'>
+    Number of D+: {{data.gradecredit6.dp6}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit6.d6'>
+    Number of D: {{data.gradecredit6.d6}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit6.f6'>
+    Number of F: {{data.gradecredit6.f6}}
+  </ion-card>
+  
+</ion-card>
+
+<ion-card *ngIf = 'data.gradecredit9'>
+
+  For credit 9:
+  <ion-card *ngIf = 'data.gradecredit9.a9'>
+    Number of A: {{data.gradecredit9.a9}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit9.bp9'>
+    Number of B+: {{data.gradecredit9.bp9}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit9.b9'>
+    Number of B: {{data.gradecredit9.b9}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit9.cp9'>
+    Number of C+: {{data.gradecredit9.cp9}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit9.c9'>
+    Number of C: {{data.gradecredit9.c9}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit9.dp9'>
+    Number of D+: {{data.gradecredit9.dp9}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit9.d9'>
+    Number of D: {{data.gradecredit9.d9}}
+  </ion-card>
+  <ion-card *ngIf = 'data.gradecredit9.f9'>
+    Number of F: {{data.gradecredit9.f9}}
+  </ion-card>
+  
+</ion-card>
+
+
 
 
     <ion-button expand = 'block' routerLink="/" routerDirection = 'back'><ion-icon slot = "start" name = "home"></ion-icon>Home</ion-button> 
 
-    {{ max }}
+    
 </ion-content>

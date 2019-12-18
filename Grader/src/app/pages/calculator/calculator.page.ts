@@ -71,6 +71,52 @@ export class CalculatorPage implements OnInit {
     bp1
     a1
 
+    f2
+    d2
+    dp2
+    c2
+    cp2
+    b2
+    bp2
+    a2
+
+    f3
+    d3
+    dp3
+    c3
+    cp3
+    b3
+    bp3
+    a3
+
+    f4
+    d4
+    dp4
+    c4
+    cp4
+    b4
+    bp4
+    a4
+
+    f6
+    d6
+    dp6
+    c6
+    cp6
+    b6
+    bp6
+    a6
+
+    f9
+    d9
+    dp9
+    c9
+    cp9
+    b9
+    bp9
+    a9
+
+
     
 
 
@@ -701,27 +747,35 @@ export class CalculatorPage implements OnInit {
         if (countgradeC2[e] != 0){
           if (e==0){
             console.log('F : ',countgradeC2[e])
+            this.f2 = countgradeC2[e]
           }
           if (e==1){
             console.log('D : ',countgradeC2[e])
+            this.d2 = countgradeC2[e]
           }
           if (e==2){
             console.log('D+ : ',countgradeC2[e])
+            this.dp2 = countgradeC2[e]
           }
           if (e==3){
             console.log('C : ',countgradeC2[e])
+            this.c2 = countgradeC2[e]
           }
           if (e==4){
             console.log('C+ : ',countgradeC2[e])
+            this.cp2 = countgradeC2[e]
           }
           if (e==5){
             console.log('B : ',countgradeC2[e])
+            this.b2 = countgradeC2[e]
           }
           if (e==6){
             console.log('B+ : ',countgradeC2[e])
+            this.bp2 = countgradeC2[e]
           }
           if (e==7){
             console.log('A : ',countgradeC2[e])
+            this.a2 = countgradeC2[e]
           }
         }
       }
@@ -731,27 +785,35 @@ export class CalculatorPage implements OnInit {
         if (countgradeC3[e] != 0){
           if (e==0){
             console.log('F : ',countgradeC3[e])
+            this.f3 = countgradeC3[e]
           }
           if (e==1){
             console.log('D : ',countgradeC3[e])
+            this.d3 = countgradeC3[e]
           }
           if (e==2){
             console.log('D+ : ',countgradeC3[e])
+            this.dp3 = countgradeC3[e]
           }
           if (e==3){
             console.log('C : ',countgradeC3[e])
+            this.c3 = countgradeC3[e]
           }
           if (e==4){
             console.log('C+ : ',countgradeC3[e])
+            this.cp3 = countgradeC3[e]
           }
           if (e==5){
             console.log('B : ',countgradeC3[e])
+            this.b3 = countgradeC3[e]
           }
           if (e==6){
             console.log('B+ : ',countgradeC3[e])
+            this.bp3 = countgradeC3[e]
           }
           if (e==7){
             console.log('A : ',countgradeC3[e])
+            this.a3 = countgradeC3[e]
           }
         }
       }
@@ -761,27 +823,35 @@ export class CalculatorPage implements OnInit {
         if (countgradeC4[e] != 0){
           if (e==0){
             console.log('F : ',countgradeC4[e])
+            this.f4 = countgradeC4[e]
           }
           if (e==1){
             console.log('D : ',countgradeC4[e])
+            this.d4 = countgradeC4[e]
           }
           if (e==2){
             console.log('D+ : ',countgradeC4[e])
+            this.dp4 = countgradeC4[e]
           }
           if (e==3){
             console.log('C : ',countgradeC4[e])
+            this.c4 = countgradeC4[e]
           }
           if (e==4){
             console.log('C+ : ',countgradeC4[e])
+            this.cp4 = countgradeC4[e]
           }
           if (e==5){
             console.log('B : ',countgradeC4[e])
+            this.b4 = countgradeC4[e]
           }
           if (e==6){
             console.log('B+ : ',countgradeC4[e])
+            this.bp4 = countgradeC4[e]
           }
           if (e==7){
             console.log('A : ',countgradeC4[e])
+            this.a4 = countgradeC4[e]
           }
         }
       }
@@ -790,27 +860,35 @@ export class CalculatorPage implements OnInit {
         if (countgradeC6[e] != 0){
           if (e==0){
             console.log('F : ',countgradeC6[e])
+            this.f6 = countgradeC6[e]
           }
           if (e==1){
             console.log('D : ',countgradeC6[e])
+            this.d6 = countgradeC6[e]
           }
           if (e==2){
             console.log('D+ : ',countgradeC6[e])
+            this.dp6 = countgradeC6[e]
           }
           if (e==3){
             console.log('C : ',countgradeC6[e])
+            this.c6 = countgradeC6[e]
           }
           if (e==4){
             console.log('C+ : ',countgradeC6[e])
+            this.cp6 = countgradeC6[e]
           }
           if (e==5){
             console.log('B : ',countgradeC6[e])
+            this.b6 = countgradeC6[e]
           }
           if (e==6){
             console.log('B+ : ',countgradeC6[e])
+            this.bp6 = countgradeC6[e]
           }
           if (e==7){
             console.log('A : ',countgradeC6[e])
+            this.a6 = countgradeC6[e]
           }
         }
       }
@@ -820,27 +898,35 @@ export class CalculatorPage implements OnInit {
         if (countgradeC9[e] != 0){
           if (e==0){
             console.log('F : ',countgradeC9[e])
+            this.f9 = countgradeC9[e]
           }
           if (e==1){
             console.log('D : ',countgradeC9[e])
+            this.d9 = countgradeC9[e]
           }
           if (e==2){
             console.log('D+ : ',countgradeC9[e])
+            this.dp9 = countgradeC9[e]
           }
           if (e==3){
             console.log('C : ',countgradeC9[e])
+            this.c9 = countgradeC9[e]
           }
           if (e==4){
             console.log('C+ : ',countgradeC9[e])
+            this.cp9 = countgradeC9[e]
           }
           if (e==5){
             console.log('B : ',countgradeC9[e])
+            this.b9 = countgradeC9[e]
           }
           if (e==6){
             console.log('B+ : ',countgradeC9[e])
+            this.bp9 = countgradeC9[e]
           }
           if (e==7){
             console.log('A : ',countgradeC9[e])
+            this.a9 = countgradeC9[e]
           }
         }
       }
@@ -1050,7 +1136,16 @@ export class CalculatorPage implements OnInit {
     mingrade: this.leastgradeposs,
     gradecredit1: {'f1':this.f1,'d1':this.d1,'dp1':this.dp1,'c1':this.c1,'cp1':this.cp1,
                   'b1':this.b1,'bp1':this.bp1,'a1':this.a1},
-    gradecredit2: []
+    gradecredit2: {'f2':this.f2,'d2':this.d2,'dp2':this.dp2,'c2':this.c2,'cp2':this.cp2,
+    'b2':this.b2,'bp2':this.bp2,'a2':this.a2},
+    gradecredit3: {'f3':this.f3,'d3':this.d3,'dp3':this.dp3,'c3':this.c3,'cp3':this.cp3,
+    'b3':this.b3,'bp3':this.bp3,'a3':this.a3},
+    gradecredit4: {'f4':this.f4,'d4':this.d4,'dp4':this.dp4,'c4':this.c4,'cp4':this.cp4,
+    'b4':this.b4,'bp4':this.bp4,'a4':this.a4},
+    gradecredit6: {'f6':this.f6,'d6':this.d6,'dp6':this.dp6,'c6':this.c6,'cp6':this.cp6,
+    'b6':this.b6,'bp6':this.bp6,'a6':this.a6},
+    gradecredit9: {'f9':this.f9,'d9':this.d9,'dp9':this.dp9,'c9':this.c9,'cp9':this.cp9,
+    'b9':this.b9,'bp9':this.bp9,'a9':this.a9}
 
 
   }
