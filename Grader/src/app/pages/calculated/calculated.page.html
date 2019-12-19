@@ -348,6 +348,39 @@
 </ion-card>
 
 
+<ion-list-header>What is my maximum and minimum grade?</ion-list-header>
+
+<ion-item>
+  
+  <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)] = "maxmin">
+  <ion-segment-button (click)="onButtonClick1()" value="max">
+    <ion-label>MAX</ion-label>
+  </ion-segment-button>
+  <ion-segment-button (click)="onButtonClick2()" value="min">
+    <ion-label>MIN</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+</ion-item>
+
+<div class="center" *ngIf="buttonClicked1">
+
+<ion-item>
+  Maximum grade is: {{data.maxgrade}}
+
+</ion-item>
+
+</div>
+
+<div class="center" *ngIf="buttonClicked2">
+
+<ion-item>
+  Minimum grade is: {{data.mingrade}}
+  
+</ion-item>
+
+  </div>
+
 
 
     <ion-button expand = 'block' routerLink="/" routerDirection = 'back'><ion-icon slot = "start" name = "home"></ion-icon>Home</ion-button> 

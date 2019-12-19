@@ -11,7 +11,8 @@ import { CalculatorPage } from '../calculator/calculator.page';
 })
 export class CalculatedPage implements OnInit {
   homepage
-  buttonClicked: boolean = false; 
+  buttonClicked1: boolean = false; 
+  buttonClicked2: boolean = false; 
   passedgpax = null;
   passedusername = "";
   data: any;
@@ -69,10 +70,17 @@ export class CalculatedPage implements OnInit {
     //this.passedusername = this.activatedRoute.snapshot.paramMap.get('myid').substring(1);
   }
 
-  async onButtonClick() {
-
-    this.buttonClicked = !this.buttonClicked;
-}
+  async onButtonClick1() {
+    
+    this.buttonClicked1 = true;
+    this.buttonClicked2 = false;
+  }
+  async onButtonClick2() {
+    
+    this.buttonClicked2 = true;
+    this.buttonClicked1 = false;
+    
+  }
 
 }
 
