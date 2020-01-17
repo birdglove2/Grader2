@@ -184,7 +184,7 @@ export class CalculatorPage implements OnInit {
           this.credit3 = doc.data().credit3
           this.credit4 = doc.data().credit4
           this.credit6 = doc.data().credit6
-          this.credit9 = doc.data().credit9
+          this.credit9 = doc.data().credit9 
 
           this.fillall = true;
           
@@ -1019,7 +1019,7 @@ export class CalculatorPage implements OnInit {
           this.credit3 = doc.data().credit3
           this.credit4 = doc.data().credit4
           this.credit6 = doc.data().credit6
-          this.credit9 = doc.data().credit9
+          this.credit9 = doc.data().credit9 
           
 
           this.fillall = true;
@@ -1132,12 +1132,12 @@ export class CalculatorPage implements OnInit {
     withdrawn4: this.withdrawn4,
     withdrawn6: this.withdrawn6,
     withdrawn9: this.withdrawn9,
-    credit1: this.credit1,
+   /* credit1: this.credit1,
     credit2: this.credit2,
     credit3: this.credit3,
     credit4: this.credit4,
     credit6: this.credit6,
-    credit9: this.credit9,
+    credit9: this.credit9, */
     semester: this.semester,
     maxgrade: this.maxgradeposs,
     mingrade: this.leastgradeposs,

@@ -62,13 +62,14 @@ export class LoginPage implements OnInit {
    
 
     if(this.gpax == null || this.gpax == 0 || this.credit == null || 
-      this.credit == 0 || this.username == "" || this.year == null || 
+      //this.credit == 0
+      this.username == "" || this.year == null || 
       this.major == null || this.withdrawn == null || this.semester == null) {
       this.presentAlertVOID();
       return null;
     }
 
-    if(this.credit > 0) {
+    /*if(this.credit > 0) {
       if(this.credit1 == null || this.credit2 == null || this.credit3 == null ||
         this.credit4 == null || this.credit6 == null || this.credit9 == null) {
       this.presentAlertVOID();
@@ -80,11 +81,12 @@ export class LoginPage implements OnInit {
       this.presentAlertCredit();
       return null;
       }
-    } else {
+    } 
+    else {
 
       this.presentAlertCredit();
 
-    }
+    } 
 
     if(this.credit != 1*this.credit1+2*this.credit2+3*this.credit3+4*this.credit4+6*this.credit6+
       9*this.credit9) {
@@ -92,6 +94,7 @@ export class LoginPage implements OnInit {
         return null;
 
       }
+      */
 
     if(this.username.length != 10) {
       this.presentAlertUsername();
@@ -126,13 +129,182 @@ export class LoginPage implements OnInit {
     }
 
     
+    if(this.year == '1st' && this.semester == '1') {
+      this.presentAlertVOID();
+      return null;
+    } 
+
+    if(this.major == 'ice') {
+
+      if(this.year == '1st' && this.semester == '2') {
+        this.credit = 18;
+        this.credit1 = 3
+        this.credit2 = 0
+        this.credit3 = 5
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '2nd' && this.semester == '1') {
+        this.credit = 37;
+        this.credit1 = 4
+        this.credit2 = 0
+        this.credit3 = 11
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '2nd' && this.semester == '2') {
+        this.credit = 55;
+        this.credit1 = 6
+        this.credit2 = 2
+        this.credit3 = 15
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '3rd' && this.semester == '1') {
+        this.credit = 74;
+        this.credit1 = 7
+        this.credit2 = 2
+        this.credit3 = 21
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '3rd' && this.semester == '2') {
+        this.credit = 92;
+        this.credit1 = 7
+        this.credit2 = 2
+        this.credit3 = 27
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '4th' && this.semester == '1') {
+        this.credit = 112;
+        this.credit1 = 8
+        this.credit2 = 4
+        this.credit3 = 32
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '4th' && this.semester == '2') {
+        this.credit = 128;
+        this.credit1 = 9
+        this.credit2 = 4
+        this.credit3 = 35
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 1
+        this.credit9 = 0
+      } 
+    } else if(this.major == 'adme') {
+      
+      if(this.year == '1st' && this.semester == '2') {
+        this.credit = 18;
+        this.credit1 = 3
+        this.credit2 = 0
+        this.credit3 = 5
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '2nd' && this.semester == '1') {
+        this.credit = 37;
+        this.credit1 = 4
+        this.credit2 = 0
+        this.credit3 = 11
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '2nd' && this.semester == '2') {
+        this.credit = 56;
+        this.credit1 = 5
+        this.credit2 = 0
+        this.credit3 = 17
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '3rd' && this.semester == '1') {
+        this.credit = 75;
+        this.credit1 = 6
+        this.credit2 = 0
+        this.credit3 = 23
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '3rd' && this.semester == '2') {
+        this.credit = 93;
+        this.credit1 = 7
+        this.credit2 = 1
+        this.credit3 = 28
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '4th' && this.semester == '1') {
+        this.credit = 113;
+        this.credit1 = 7
+        this.credit2 = 2
+        this.credit3 = 34
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '4th' && this.semester == '2') {
+        this.credit = 135;
+        this.credit1 = 8
+        this.credit2 = 2
+        this.credit3 = 41
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+    } 
+
+    if(this.withdrawn == 'yes') {
+      this.credit - (1*this.withdrawn1+2*this.withdrawn2+3*this.withdrawn3
+        +4*this.withdrawn4+6*this.withdrawn6+9*this.withdrawn9);
+    }
+
 
     if(this.gpax > 4 || this.gpax < 0) {
       this.presentAlertGPAX();
       return null;
     }
 
-    if(this.major == "ice") {
+    /*if(this.major == "ice") {
       if(this.credit > 146 || this.credit < 0) {
         this.presentAlertCredit();
         return null;
@@ -173,6 +345,7 @@ export class LoginPage implements OnInit {
         return null;
       }
     }
+    */
 
     this.afstore.doc<any>('userProfile/'+this.username).set({
       gpax: this.gpax,
