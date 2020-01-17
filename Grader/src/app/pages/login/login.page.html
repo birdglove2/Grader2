@@ -20,19 +20,58 @@
     <ion-input clearInput type = "text" [(ngModel)] = "username" placeholder="Enter Input"></ion-input>
   </ion-item>
 
+
+  <ion-item>
+      
+      <ion-label>Year</ion-label>
+      <ion-select [(ngModel)] = "year" placeholder="Select One">
+        <ion-select-option value="1st">Freshman</ion-select-option>
+        <ion-select-option value="2nd">Sophomore</ion-select-option>
+        <ion-select-option value="3rd">Junior</ion-select-option>
+        <ion-select-option value="4th">Senior</ion-select-option>
+      </ion-select>
+  </ion-item>
+
+  <ion-item>
+      
+    <ion-label>Semester</ion-label>
+      <ion-select [(ngModel)] = "semester" placeholder="Select One">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+      </ion-select>
+
+  </ion-item>
+
+
+  <ion-item>
+      
+    <ion-label>Major</ion-label>
+      <ion-select [(ngModel)] = "major" placeholder="Select One">
+        <ion-select-option value="ICE">ICE</ion-select-option>
+        <ion-select-option value="ADME">ADME</ion-select-option>
+        <ion-select-option value="AERO">AERO</ion-select-option>
+        <ion-select-option value="NANOb">NANO BIO</ion-select-option>
+        <ion-select-option value="NANOm">NANO MAT</ion-select-option>
+        <ion-select-option value="AI">AI</ion-select-option>
+      </ion-select>
+
+  </ion-item>
+
   <ion-item>
     <ion-label position = "floating" >Enter your current GPAX</ion-label>
     <ion-input type = "number" min = "0" max = "4" [(ngModel)] = "gpax" placeholder="Enter GPAX"></ion-input>
   </ion-item>
 
-  <ion-item>
+ <!-- <ion-item>
     <ion-label position = "floating" >Total credit taken(including W)</ion-label>
     <ion-input (input)="gotChar($event)" type = "number" min = "0" [(ngModel)] = "credit" placeholder="Enter credits"></ion-input>
   </ion-item>
+-->
 
 
   <div class="center" *ngIf="checker">
-  <ion-item>
+
+ <!-- <ion-item>
 
       <ion-label position = "floating" >Number of courses(credit 1) taken</ion-label>
       <ion-input type = "number" min = "0" max = "10" [(ngModel)] = "credit1" placeholder="Enter credit"></ion-input>
@@ -49,6 +88,23 @@
    
 
   </ion-item>
+
+-->
+
+<ion-item>
+      
+    <ion-label>1st Semester</ion-label>
+    <ion-select multiple = "true" [(ngModel)] = "ClassSem1" placeholder="Select Classes you've taken">
+      <ion-select-option value="2183101">ENG GRAPHICS</ion-select-option>
+      <ion-select-option value="2189101">ENG MAT</ion-select-option>
+      <ion-select-option value="2301107">CALCULUS I</ion-select-option>
+      <ion-select-option value="2304153">PHYSICS ENGS</ion-select-option>
+      <ion-select-option value="2304193">PHYSICS LAB ENGS</ion-select-option>
+      <ion-select-option value="5501112">COMM ENG I</ion-select-option>
+    </ion-select>
+</ion-item>
+
+
 
   </div>
   
@@ -201,41 +257,6 @@
 
 
 
-  <ion-item>
-      
-      <ion-label>Year</ion-label>
-      <ion-select [(ngModel)] = "year" placeholder="Select One">
-        <ion-select-option value="1st">Freshman</ion-select-option>
-        <ion-select-option value="2nd">Sophomore</ion-select-option>
-        <ion-select-option value="3rd">Junior</ion-select-option>
-        <ion-select-option value="4th">Senior</ion-select-option>
-      </ion-select>
-  </ion-item>
-
-  <ion-item>
-      
-    <ion-label>Semester</ion-label>
-      <ion-select [(ngModel)] = "semester" placeholder="Select One">
-        <ion-select-option value="1">1</ion-select-option>
-        <ion-select-option value="2">2</ion-select-option>
-      </ion-select>
-
-  </ion-item>
-
-
-  <ion-item>
-      
-    <ion-label>Major</ion-label>
-      <ion-select [(ngModel)] = "major" placeholder="Select One">
-        <ion-select-option value="ICE">ICE</ion-select-option>
-        <ion-select-option value="ADME">ADME</ion-select-option>
-        <ion-select-option value="AERO">AERO</ion-select-option>
-        <ion-select-option value="NANOb">NANO BIO</ion-select-option>
-        <ion-select-option value="NANOm">NANO MAT</ion-select-option>
-        <ion-select-option value="AI">AI</ion-select-option>
-      </ion-select>
-
-  </ion-item>
 
  
     </ion-card>
