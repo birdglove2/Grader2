@@ -134,7 +134,7 @@ export class LoginPage implements OnInit {
       return null;
     } 
 
-    if(this.major == 'ice') {
+    if(this.major == 'iceOLD') {
 
       if(this.year == '1st' && this.semester == '2') {
         this.credit = 18;
@@ -212,7 +212,7 @@ export class LoginPage implements OnInit {
         this.credit6 = 1
         this.credit9 = 0
       } 
-    } else if(this.major == 'adme') {
+    } else if(this.major == 'admeOLD') {
       
       if(this.year == '1st' && this.semester == '2') {
         this.credit = 18;
@@ -291,7 +291,570 @@ export class LoginPage implements OnInit {
         this.credit9 = 0
       } 
 
-    } 
+    } else if(this.major == 'aeroOLD') {
+
+      if(this.year == '1st' && this.semester == '2') {
+        this.credit = 18;
+        this.credit1 = 3
+        this.credit2 = 0
+        this.credit3 = 5
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '2nd' && this.semester == '1') {
+        this.credit = 37;
+        this.credit1 = 4
+        this.credit2 = 0
+        this.credit3 = 11
+        this.credit4 = 0
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+        
+      } 
+
+      if(this.year == '2nd' && this.semester == '2') {
+        this.credit = 55;
+        this.credit1 = 4
+        this.credit2 = 1
+        this.credit3 = 15
+        this.credit4 = 1
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+      } 
+
+      if(this.year == '3rd' && this.semester == '1') {
+        this.credit = 74;
+        this.credit1 = 6
+        this.credit2 = 2
+        this.credit3 = 20
+        this.credit4 = 1
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+        
+      } 
+
+      if(this.year == '3rd' && this.semester == '2') {
+        this.credit = 93;
+        this.credit1 = 6
+        this.credit2 = 4
+        this.credit3 = 25
+        this.credit4 = 1
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+        
+       
+      } 
+
+      if(this.year == '4th' && this.semester == '1') {
+        this.credit = 112;
+        this.credit1 = 7
+        this.credit2 = 7
+        this.credit3 = 29
+        this.credit4 = 1
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+     
+      } 
+
+      if(this.year == '4th' && this.semester == '2') {
+        this.credit = 130;
+        this.credit1 = 7
+        this.credit2 = 9
+        this.credit3 = 31
+        this.credit4 = 3
+        this.credit5 = 0
+        this.credit6 = 0
+        this.credit9 = 0
+       
+      }
+      
+    } else if(this.major == "AI") {
+
+        if(this.year == '1st' && this.semester == '2') {
+          this.credit = 19;
+          this.credit1 = 1
+          this.credit2 = 0
+          this.credit3 = 6
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '1') {
+          this.credit = 38;
+          this.credit1 = 2
+          this.credit2 = 0
+          this.credit3 = 12
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '2') {
+          this.credit = 57;
+          this.credit1 = 3
+          this.credit2 = 0
+          this.credit3 = 18
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '1') {
+          this.credit = 72;
+          this.credit1 = 3
+          this.credit2 = 0
+          this.credit3 = 23
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '2') {
+          this.credit = 88;
+          this.credit1 = 4
+          this.credit2 = 0
+          this.credit3 = 28
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '1') {
+          this.credit = 105;
+          this.credit1 = 4
+          this.credit2 = 1
+          this.credit3 = 33
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '2') {
+          this.credit = 118;
+          this.credit1 = 5
+          this.credit2 = 1
+          this.credit3 = 37
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+      } else if(this.major == 'NANOb') {
+
+        if(this.year == '1st' && this.semester == '2') {
+          this.credit = 17;
+          this.credit1 = 2
+          this.credit2 = 0
+          this.credit3 = 5
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '1') {
+          this.credit = 37;
+          this.credit1 = 4
+          this.credit2 = 0
+          this.credit3 = 11
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '2') {
+          this.credit = 57;
+          this.credit1 = 5
+          this.credit2 = 0
+          this.credit3 = 16
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '1') {
+          this.credit = 76;
+          this.credit1 = 7
+          this.credit2 = 1
+          this.credit3 = 21
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '2') {
+          this.credit = 95;
+          this.credit1 = 8
+          this.credit2 = 1
+          this.credit3 = 27
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '1') {
+          this.credit = 115;
+          this.credit1 = 8
+          this.credit2 = 2
+          this.credit3 = 33
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '2') {
+          this.credit = 131;
+          this.credit1 = 9
+          this.credit2 = 2
+          this.credit3 = 38
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+
+
+      } else if(this.major == 'NANOm') {
+
+        if(this.year == '1st' && this.semester == '2') {
+          this.credit = 17;
+          this.credit1 = 2
+          this.credit2 = 0
+          this.credit3 = 5
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '1') {
+          this.credit = 37;
+          this.credit1 = 4
+          this.credit2 = 0
+          this.credit3 = 11
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '2') {
+          this.credit = 57;
+          this.credit1 = 5
+          this.credit2 = 0
+          this.credit3 = 16
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '1') {
+          this.credit = 74;
+          this.credit1 = 7
+          this.credit2 = 0
+          this.credit3 = 21
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '2') {
+          this.credit = 92;
+          this.credit1 = 7
+          this.credit2 = 0
+          this.credit3 = 27
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '1') {
+          this.credit = 112;
+          this.credit1 = 7
+          this.credit2 = 1
+          this.credit3 = 33
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '2') {
+          this.credit = 131;
+          this.credit1 = 8
+          this.credit2 = 1
+          this.credit3 = 39
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+
+      } else if(this.major == 'ICE') {
+
+        if(this.year == '1st' && this.semester == '2') {
+          this.credit = 18;
+          this.credit1 = 3
+          this.credit2 = 0
+          this.credit3 = 5
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '1') {
+          this.credit = 37;
+          this.credit1 = 4
+          this.credit2 = 0
+          this.credit3 = 11
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '2') {
+          this.credit = 55;
+          this.credit1 = 6
+          this.credit2 = 2
+          this.credit3 = 15
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '1') {
+          this.credit = 74;
+          this.credit1 = 7
+          this.credit2 = 2
+          this.credit3 = 21
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '2') {
+          this.credit = 92;
+          this.credit1 = 7
+          this.credit2 = 2
+          this.credit3 = 27
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '1') {
+          this.credit = 112;
+          this.credit1 = 8
+          this.credit2 = 4
+          this.credit3 = 32
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '2') {
+          this.credit = 125;
+          this.credit1 = 9
+          this.credit2 = 4
+          this.credit3 = 36
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+
+
+      } else if(this.major == 'ADME') {
+
+        if(this.year == '1st' && this.semester == '2') {
+          this.credit = 18;
+          this.credit1 = 3
+          this.credit2 = 0
+          this.credit3 = 5
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '1') {
+          this.credit = 37;
+          this.credit1 = 4
+          this.credit2 = 0
+          this.credit3 = 11
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '2') {
+          this.credit = 56;
+          this.credit1 = 5
+          this.credit2 = 0
+          this.credit3 = 17
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '1') {
+          this.credit = 74;
+          this.credit1 = 6
+          this.credit2 = 1
+          this.credit3 = 22
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '2') {
+          this.credit = 91;
+          this.credit1 = 6
+          this.credit2 = 2
+          this.credit3 = 27
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '1') {
+          this.credit = 110;
+          this.credit1 = 6
+          this.credit2 = 4
+          this.credit3 = 32
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '2') {
+          this.credit = 129;
+          this.credit1 = 7
+          this.credit2 = 4
+          this.credit3 = 38
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 1
+          this.credit9 = 0
+        } 
+      } else if(this.major == 'AERO') {
+
+        if(this.year == '1st' && this.semester == '2') {
+          this.credit = 16;
+          this.credit1 = 1
+          this.credit2 = 0
+          this.credit3 = 5
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '1') {
+          this.credit = 34;
+          this.credit1 = 4
+          this.credit2 = 0
+          this.credit3 = 10
+          this.credit4 = 0
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '2nd' && this.semester == '2') {
+          this.credit = 53;
+          this.credit1 = 4
+          this.credit2 = 0
+          this.credit3 = 15
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+          console.log('test')
+        } 
+  
+        if(this.year == '3rd' && this.semester == '1') {
+          this.credit = 72;
+          this.credit1 = 5
+          this.credit2 = 0
+          this.credit3 = 21
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '3rd' && this.semester == '2') {
+          this.credit = 92;
+          this.credit1 = 5
+          this.credit2 = 1
+          this.credit3 = 27
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '1') {
+          this.credit = 112;
+          this.credit1 = 6
+          this.credit2 = 3
+          this.credit3 = 32
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+  
+        if(this.year == '4th' && this.semester == '2') {
+          this.credit = 129;
+          this.credit1 = 6
+          this.credit2 = 4
+          this.credit3 = 37
+          this.credit4 = 1
+          this.credit5 = 0
+          this.credit6 = 0
+          this.credit9 = 0
+        } 
+
+      } 
+
+
+    
 
     if(this.withdrawn == 'yes') {
       this.credit - (1*this.withdrawn1+2*this.withdrawn2+3*this.withdrawn3

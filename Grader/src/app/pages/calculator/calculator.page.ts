@@ -123,18 +123,21 @@ export class CalculatorPage implements OnInit {
     semester = null
     creditWithdrawn = null
     gradelist =  [0.0, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0]
-    creditlistICE =  [9.0, 8.0, 114.0, 0.0, 6.0, 9.0]
-    creditlistADME = [8.0,4.0,135.0,0.0,0.0,0.0]
-    creditlistAERO = [8.0,18.0,108.0,12.0,0.0,0.0]
+    creditlistICE =  [9.0, 8.0, 129.0, 0.0, 0.0, 0.0]
+    creditlistADME = [6.0,8.0,129.0,4.0,0.0,0.0]
+    creditlistAERO = [7.0,8.0,126.0,4.0,0.0,0.0]
+    creditlistICEold =  [9.0, 8.0, 114.0, 0.0, 6.0, 9.0]
+    creditlistADMEold = [8.0,4.0,135.0,0.0,0.0,0.0]
+    creditlistAEROold = [8.0,18.0,108.0,12.0,0.0,0.0]
     creditlistNANOb = [10.0, 4.0, 129.0, 4.0,0.0,0.0]
     creditlistNANOm = [9.0,2.0,132.0,4.0,0.0,0.0]
-    creditlistAI = [4.0,2.0,123.0,0.0,6.0,0.0]
+    creditlistAI = [5.0,2.0,120.0,0.0,6.0,0.0]
     creditICE = 146
     creditADME = 147
-    creditAERO = 146
+    creditAERO = 145
     creditNANOb = 147
     creditNANOm = 147
-    creditAI = 135
+    creditAI = 133
     creditlist
     totalcredit
     creditlist0
