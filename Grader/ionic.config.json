@@ -1,5 +1,7 @@
 {
   "name": "Grader",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

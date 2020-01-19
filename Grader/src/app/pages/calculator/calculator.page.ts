@@ -9,7 +9,7 @@ import { LoginPage } from '../login/login.page';
 import { Router, NavigationExtras } from '@angular/router';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { CalculatedPage } from '../calculated/calculated.page';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from '@ionic/angular';
 
 
 

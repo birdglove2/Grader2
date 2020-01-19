@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { ActivatedRoute, Router} from '@angular/router';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CalculatorPage } from '../calculator/calculator.page';
+import { NavController, NavParams } from '@ionic/angular';
+// import { CalculatorPage } from '../calculator/calculator.page';
 
 @Component({
   selector: 'app-calculated',
